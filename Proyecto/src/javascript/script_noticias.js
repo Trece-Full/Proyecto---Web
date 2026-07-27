@@ -1,3 +1,5 @@
+/* 1. DATOS */
+
 const noticiaDestacada = {
   imagen: "https://picsum.photos/seed/laboratorio-tec/1200/600",
   titulo: "Inauguran nuevo laboratorio de innovación tecnológica",
@@ -78,6 +80,8 @@ const listaNoticias = [
     tiempo: "Hace 5 días"
   }
 ];
+
+/*  2. FUNCIONES PARA "PINTAR" EL CONTENIDO EN EL HTML */
 
 function pintarHero() {
   const hero = document.getElementById('hero-destacada');
@@ -161,7 +165,7 @@ function pintarEventos() {
   });
 }
 
-/* 3. MODAL: abrir y cerrar la noticia completa*/
+/* 3. MODAL: abrir y cerrar la noticia completa */
 
 function abrirModal(noticia) {
   document.getElementById('modalImagen').style.backgroundImage = `url('${noticia.imagen}')`;
@@ -210,7 +214,9 @@ function activarModal() {
   });
 }
 
-/* 4. INTERACTIVIDAD (menú móvil, buscador y navegación)*/
+/* ==========================================================
+   4. INTERACTIVIDAD (menú móvil, buscador y navegación)
+   ========================================================== */
 
 function activarMenuMovil() {
   const boton = document.getElementById('menuToggle');
@@ -250,7 +256,7 @@ function activarNavegacion() {
   });
 }
 
-/* 5. INICIALIZACIÓN*/
+/* 5. INICIALIZACIÓN */
 
 document.addEventListener('DOMContentLoaded', () => {
   pintarHero();
