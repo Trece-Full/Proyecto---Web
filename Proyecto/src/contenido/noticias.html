@@ -1,10 +1,104 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info.Estudiantil - Noticias</title>
+  <link rel="stylesheet" href="styles_noticias.css">
 </head>
 <body>
-    <p>Esta es una noticia de ejemplo.</p>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <h1>INFO.<span>ESTUDIANTIL</span></h1>
+      <p>Noticias, avisos y más para estudiantes</p>
+    </div>
+
+    <!-- Botón menú -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="nav" id="navMenu">
+      <a href="#" class="nav-link" data-page="inicio">Inicio</a>
+      <a href="#" class="nav-link active" data-page="noticias">Noticias</a>
+      <a href="#" class="nav-link" data-page="avisos">Avisos</a>
+      <a href="#" class="nav-link" data-page="eventos">Eventos</a>
+      <a href="#" class="nav-link" data-page="convocatorias">Convocatorias</a>
+      <a href="#" class="nav-link" data-page="publicaciones">Publicaciones</a>
+      <a href="#" class="nav-link" data-page="curiosidades">Curiosidades</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="buscador" placeholder="Buscar...">
+      </div>
+      <button class="btn-suscribir">✉ Suscríbete</button>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor-principal">
+
+    <!--  COLUMNA IZQUIERDA -->
+    <div class="columna-izquierda">
+
+      <!-- Noticia destacada -->
+      <section class="hero" id="hero-destacada">
+        <!-- El JS inserta aquí la noticia destacada -->
+      </section>
+
+      <!-- Todas las noticias -->
+      <section class="ultimas-noticias">
+        <h2>Todas las noticias</h2>
+        <div class="grid-noticias" id="grid-noticias">
+          <!-- El JS inserta aquí las tarjetas de noticias -->
+        </div>
+      </section>
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <aside class="columna-derecha">
+
+      <!-- Lo más importante -->
+      <section class="sidebar-card">
+        <h3>Lo más importante</h3>
+        <div id="lista-importantes">
+          <!-- El JS inserta aquí avisos/eventos/convocatorias destacados -->
+        </div>
+        <a href="#" class="ver-todos">Ver todos los avisos →</a>
+      </section>
+
+      <!-- Próximos eventos -->
+      <section class="sidebar-card">
+        <h3>Próximos eventos</h3>
+        <div id="lista-eventos">
+          <!-- El JS inserta aquí los próximos eventos -->
+        </div>
+        <a href="#" class="ver-todos">Ver todos los eventos →</a>
+      </section>
+    </aside>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie-pagina">
+    <p>© 2025 Equipo #3. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-fondo" id="modalFondo">
+    <div class="modal-contenido">
+      <button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar">✕</button>
+      <div id="modalImagen" class="modal-imagen"></div>
+      <div class="modal-texto">
+        <span class="categoria" id="modalCategoria"></span>
+        <h2 id="modalTitulo"></h2>
+        <span class="hora" id="modalTiempo"></span>
+        <p id="modalCuerpo"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script_noticias.js"></script>
 </body>
 </html>
