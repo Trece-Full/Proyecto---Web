@@ -221,6 +221,7 @@ function activarModal() {
 function activarMenuMovil() {
   const boton = document.getElementById('menuToggle');
   const menu = document.getElementById('navMenu');
+  if (!boton || !menu) return; // el header ya no existe en esta página
 
   boton.addEventListener('click', () => {
     menu.classList.toggle('abierto');
@@ -229,6 +230,7 @@ function activarMenuMovil() {
 
 function activarBuscador() {
   const input = document.getElementById('buscador');
+  if (!input) return; // el buscador estaba en el header, que ya no existe
 
   input.addEventListener('input', () => {
     const texto = input.value.toLowerCase().trim();
