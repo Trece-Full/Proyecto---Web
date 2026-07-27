@@ -1,6 +1,4 @@
-/* ==========================================================
-   VARIABLES DE COLOR (así se editan los colores en un solo lugar)
-   ========================================================== */
+/*VARIABLES DE COLOR (así se editan los colores en un solo lugar)*/
 :root {
   --bg-principal: #0c0e14;
   --bg-tarjeta: #14171f;
@@ -17,9 +15,7 @@
   --color-noticia: #60a5fa;
 }
 
-/* ==========================================================
-   RESET BÁSICO
-   ========================================================== */
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
@@ -38,9 +34,7 @@ a {
   text-decoration: none;
 }
 
-/* ==========================================================
-   HEADER
-   ========================================================== */
+/* HEADER*/
 .header {
   display: flex;
   align-items: center;
