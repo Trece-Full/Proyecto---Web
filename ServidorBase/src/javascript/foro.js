@@ -313,7 +313,7 @@ function mostrarDetalle(id) {
 
     <style>
 
-    #volver{
+    #volver, #responder{
     
     border: none;
 
