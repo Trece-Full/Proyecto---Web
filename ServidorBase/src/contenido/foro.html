@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro Estudiantil</title>
+
+    <link rel="stylesheet" href="../css/foro.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= ENCABEZADO ================= -->
+
+    <header class="header">
+
+        <div class="header-info">
+            <h1>Foro Estudiantil</h1>
+            <p>Comparte, pregunta y conecta con otros estudiantes</p>
+        </div>
+
+        <div class="estadisticas">
+
+            <div class="stat">
+                <h2 id="totalThreads">0</h2>
+                <span>Discusiones</span>
+            </div>
+
+            <div class="stat">
+                <h2 id="totalReplies">0</h2>
+                <span>Respuestas</span>
+            </div>
+
+            <div class="stat">
+                <h2>6</h2>
+                <span>Categorías</span>
+            </div>
+
+            <div class="stat">
+                <h2>47</h2>
+                <span>Activos hoy</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="contenedor">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <button id="btnNuevaDiscusion" class="btnPrincipal">
+                <i class="fa-solid fa-plus"></i>
+                Nueva discusión
+            </button>
+
+            <div class="categorias">
+
+                <h3>CATEGORÍAS</h3>
+
+                <button class="categoria activa" data-category="todos">
+                    Todos los temas
+                </button>
+
+                <button class="categoria" data-category="general">
+                    General
+                </button>
+
+                <button class="categoria" data-category="academico">
+                    Académico
+                </button>
+
+                <button class="categoria" data-category="tecnologia">
+                    Tecnología
+                </button>
+
+                <button class="categoria" data-category="cultura">
+                    Cultura y Arte
+                </button>
+
+                <button class="categoria" data-category="deportes">
+                    Deportes
+                </button>
+
+                <button class="categoria" data-category="empleos">
+                    Empleos y Prácticas
+                </button>
+
+            </div>
+
+
+            <div class="reglas">
+
+                <h3>NORMAS DEL FORO</h3>
+
+                <p>1. Sé respetuoso con todos.</p>
+                <p>2. No compartas información personal.</p>
+                <p>3. Evita contenido ofensivo.</p>
+                <p>4. Publica en la categoría correcta.</p>
+                <p>5. No hagas spam.</p>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ================= CONTENIDO ================= -->
+
+        <section class="contenido">
+
+            <!-- Buscador -->
+
+            <div class="busqueda">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="buscar"
+                    placeholder="Buscar una discusión...">
+
+            </div>
+
+
+            <p id="contador"></p>
+
+
+            <!-- Aquí aparecerán todas las publicaciones -->
+
+            <div id="listaDiscusiones">
+
+            </div>
+
+
+            <!-- Aquí se mostrará una discusión cuando el usuario le dé clic -->
+
+            <div id="detalleDiscusion" class="oculto">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+    <!-- ================= MODAL ================= -->
+
+    <div id="modal" class="modal oculto">
+
+        <div class="ventana">
+
+            <div class="modalHeader">
+
+                <h2>Nueva discusión</h2>
+
+                <button id="cerrarModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <label>Categoría</label>
+
+            <select id="categoria">
+
+                <option value="general">General</option>
+
+                <option value="academico">Académico</option>
+
+                <option value="tecnologia">Tecnología</option>
+
+                <option value="cultura">Cultura y Arte</option>
+
+                <option value="deportes">Deportes</option>
+
+                <option value="empleos">Empleos y Prácticas</option>
+
+            </select>
+
+
+
+            <label>Título</label>
+
+            <input
+                type="text"
+                id="titulo"
+                placeholder="Título de la discusión">
+
+
+
+            <label>Contenido</label>
+
+            <textarea
+                id="contenido"
+                rows="7"
+                placeholder="Escribe tu publicación..."></textarea>
+
+
+            <div class="botones">
+
+                <button id="cancelar">
+                    Cancelar
+                </button>
+
+                <button id="publicar">
+                    Publicar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="../javascript/foro.js"></script>
+
+</body>
+
+</html>
