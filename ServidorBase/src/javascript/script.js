@@ -10,7 +10,27 @@ async function cargarPagina(nombre) {
 
         const html = await respuesta.text();
 
-        document.getElementById("mainContent").innerHTML = html;
+        const contenedor = document.getElementById("mainContent");
+        contenedor.innerHTML = html;
+
+        document.querySelectorAll('script[data-seccion-dinamica]').forEach(s => s.remove());
+
+        const scriptsViejos = contenedor.querySelectorAll("script");
+
+        scriptsViejos.forEach(scriptViejo => {
+            const scriptNuevo = document.createElement("script");
+
+            for (const atributo of scriptViejo.attributes) {
+                scriptNuevo.setAttribute(atributo.name, atributo.value);
+            }
+
+            scriptNuevo.textContent = scriptViejo.textContent;
+
+            scriptNuevo.setAttribute('data-seccion-dinamica', 'true');
+
+            scriptViejo.remove();
+            document.body.appendChild(scriptNuevo);
+        });
 
     } catch (error) {
 
@@ -24,4 +44,3 @@ async function cargarPagina(nombre) {
 }
 
 cargarPagina("inicio");
-

@@ -260,14 +260,12 @@ function activarNavegacion() {
 
 /* 5. INICIALIZACIÓN */
 
-document.addEventListener('DOMContentLoaded', () => {
-  pintarHero();
-  pintarNoticias(listaNoticias);
-  pintarImportantes();
-  pintarEventos();
+pintarHero();
+pintarNoticias(listaNoticias);
+pintarImportantes();
+pintarEventos();
 
-  activarModal();
-  activarMenuMovil();
-  activarBuscador();
-  activarNavegacion();
-});
+activarModal();
+activarMenuMovil();
+activarBuscador();
+activarNavegacion();
