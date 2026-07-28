@@ -251,7 +251,7 @@ function iniciarPaginaEventos() {
       organizer: inputOrganizador.value,
       attendees: Number(inputCupos.value),
       description: inputDescripcion.value,
-      image: inputImagen.value,
+      image: inputImagen.value || "https://imgs.search.brave.com/Ee2bOGhot4b50PV67x73b7t4Xb6DGR4dbNKp0eqEFIo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTU0/OTk4OTgyL2VzL2Zv/dG8vYW5maXRlYXRy/by1kZS1lc3R1ZGlh/bnRlcy1kZS1sYS11/bml2ZXJzaWRhZC1j/b21wbGV0by1oYWNp/ZW5kby1leGFtZW4u/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXBFUVNOSEFmblhn/aTBMR2MxcU5SMzdC/NDh5b2pFdkVvS0VG/OWltNlloSkk9",
       featured: inputDestacado.checked,
     };
 
