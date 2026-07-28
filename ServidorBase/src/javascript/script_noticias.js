@@ -1,3 +1,5 @@
+(function () {
+
 /* 1. DATOS */
 
 const noticiaDestacada = {
@@ -269,3 +271,5 @@ activarModal();
 activarMenuMovil();
 activarBuscador();
 activarNavegacion();
+
+})(); 
