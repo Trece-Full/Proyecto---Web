@@ -11,27 +11,6 @@ const noticiaDestacada = {
   categoria: "Noticias"
 };
 
-const listaImportantes = [
-  { tipo: "aviso", titulo: "No habrá clases el viernes 30 de mayo por junta académica", tiempo: "Hace 2 horas" },
-  { tipo: "evento", titulo: "Hackathon 2025: competencia de desarrollo", tiempo: "Hace 5 horas" },
-  { tipo: "convocatoria", titulo: "Becas de movilidad internacional 2026-1", tiempo: "Hace 1 día" },
-  { tipo: "publicacion", titulo: "Nueva revista estudiantil ya disponible", tiempo: "Hace 2 días" }
-];
-
-const listaEventos = [
-  { dia: "28", mes: "May", titulo: "Hackathon 2025", detalle: "Competencia de desarrollo · Aula Magna · 10:00 AM" },
-  { dia: "02", mes: "Jun", titulo: "Conferencia: IA y Futuro", detalle: "Impartida por expertos · Auditorio Central · 05:00 PM" },
-  { dia: "05", mes: "Jun", titulo: "Taller de Git y GitHub", detalle: "Aprende control de versiones · Lab. Cómputo 2 · 03:00 PM" }
-];
-
-/* Etiquetas visibles según el tipo, para no repetir código */
-const etiquetasTipo = {
-  aviso: { texto: "Aviso", clase: "etiqueta-aviso" },
-  evento: { texto: "Evento", clase: "etiqueta-evento" },
-  convocatoria: { texto: "Convocatoria", clase: "etiqueta-convocatoria" },
-  publicacion: { texto: "Publicación", clase: "etiqueta-publicacion" }
-};
-
 const listaNoticias = [
   {
     imagen: "https://picsum.photos/seed/hackathon-isc/1000/500",
@@ -129,44 +108,6 @@ function pintarNoticias(lista) {
   });
 }
 
-function pintarImportantes() {
-  const contenedor = document.getElementById('lista-importantes');
-  contenedor.innerHTML = "";
-
-  listaImportantes.forEach(item => {
-    const etiqueta = etiquetasTipo[item.tipo];
-    const div = document.createElement('div');
-    div.className = 'item-importante';
-    div.innerHTML = `
-      <span class="etiqueta ${etiqueta.clase}">${etiqueta.texto}</span>
-      <h4>${item.titulo}</h4>
-      <span class="hora">${item.tiempo}</span>
-    `;
-    contenedor.appendChild(div);
-  });
-}
-
-function pintarEventos() {
-  const contenedor = document.getElementById('lista-eventos');
-  contenedor.innerHTML = "";
-
-  listaEventos.forEach(evento => {
-    const div = document.createElement('div');
-    div.className = 'item-evento';
-    div.innerHTML = `
-      <div class="fecha-evento">
-        <span class="dia">${evento.dia}</span>
-        <span class="mes">${evento.mes}</span>
-      </div>
-      <div>
-        <h4>${evento.titulo}</h4>
-        <p>${evento.detalle}</p>
-      </div>
-    `;
-    contenedor.appendChild(div);
-  });
-}
-
 /* 3. MODAL: abrir y cerrar la noticia completa */
 
 function abrirModal(noticia) {
@@ -216,60 +157,9 @@ function activarModal() {
   });
 }
 
-/* ==========================================================
-   4. INTERACTIVIDAD (menú móvil, buscador y navegación)
-   ========================================================== */
-
-function activarMenuMovil() {
-  const boton = document.getElementById('menuToggle');
-  const menu = document.getElementById('navMenu');
-  if (!boton || !menu) return; // el header ya no existe en esta página
-
-  boton.addEventListener('click', () => {
-    menu.classList.toggle('abierto');
-  });
-}
-
-function activarBuscador() {
-  const input = document.getElementById('buscador');
-  if (!input) return; // el buscador estaba en el header, que ya no existe
-
-  input.addEventListener('input', () => {
-    const texto = input.value.toLowerCase().trim();
-
-    const resultado = listaNoticias.filter(noticia =>
-      noticia.titulo.toLowerCase().includes(texto) ||
-      noticia.resumen.toLowerCase().includes(texto)
-    );
-
-    pintarNoticias(resultado);
-  });
-}
-
-function activarNavegacion() {
-  const enlaces = document.querySelectorAll('.nav-link');
-
-  enlaces.forEach(enlace => {
-    enlace.addEventListener('click', (evento) => {
-      evento.preventDefault();
-      enlaces.forEach(e => e.classList.remove('active'));
-      enlace.classList.add('active');
-      // Aquí cada compañero de equipo puede conectar su sección,
-      // por ejemplo: si (enlace.dataset.page === "avisos") cargarAvisos();
-    });
-  });
-}
-
-/* 5. INICIALIZACIÓN */
+/* 4. INICIALIZACIÓN */
 
 pintarHero();
 pintarNoticias(listaNoticias);
-pintarImportantes();
-pintarEventos();
-
 activarModal();
-activarMenuMovil();
-activarBuscador();
-activarNavegacion();
-
-})(); 
+})();
