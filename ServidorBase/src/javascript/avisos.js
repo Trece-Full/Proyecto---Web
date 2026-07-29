@@ -1,14 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  initFiltrosCategoria();
-  initOrdenarPor();
-  initCargarMas();
-  initFiltroCarrera();
-  initSuscripcion();
-  initVerDetalles();
-  initLimpiarFiltros();
-  initVigencia();
-});
-
 const estadoFiltros = {
   categoria: "todos",
   carrera: "todas",
@@ -291,3 +280,12 @@ function mostrarMensaje(texto, tipo, referencia) {
 
   referencia.insertAdjacentElement("afterend", mensaje);
 }
+
+initFiltrosCategoria();
+initOrdenarPor();
+initCargarMas();
+initFiltroCarrera();
+initSuscripcion();
+initVerDetalles();
+initLimpiarFiltros();
+initVigencia();
