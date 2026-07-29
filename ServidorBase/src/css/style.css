@@ -66,13 +66,13 @@ header p, header h1{
 }
 
 .navCenter{
-    
+
 }
 
 .navCenter ul{
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 60px;
     list-style: none;
 }
 
