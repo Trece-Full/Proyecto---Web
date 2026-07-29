@@ -67,8 +67,28 @@ function cargarRutaActual(){
 }
 
 cargarRutaActual();
+actualizarFecha();
 
 window.addEventListener("popstate", () =>{
     cargarRutaActual();
 });
 //cargarPagina("inicio");
+
+//FUNCIÓN PARA ACTUALIZAR FECHA
+function actualizarFecha() {
+
+    const fecha = new Date();
+
+    const opciones = {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    };
+
+    let texto = fecha.toLocaleDateString("es-MX", opciones);
+
+    texto = texto.charAt(0).toUpperCase() + texto.slice(1);
+
+    document.getElementById("fecha-header").textContent = texto;
+}
