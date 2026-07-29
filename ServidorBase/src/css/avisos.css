@@ -162,6 +162,10 @@ button, input, select {
   100% { background: var(--bg); }
 }
 
+.modal-box--exito .modal-box__cerrar:hover {
+  background: #128a3e;
+}
+
 .filtros {
   display: flex;
   justify-content: space-between;

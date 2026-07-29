@@ -250,35 +250,17 @@ function initSuscripcion() {
     const email = input.value.trim();
 
     if (!validarEmail(email)) {
-      input.style.borderColor = "var(--red)";
-      mostrarMensaje("Ingresa un correo válido.", "error", input);
+      alert("Ingresa un correo electrónico válido para poder suscribirte.");
       return;
     }
 
-    input.style.borderColor = "var(--green)";
-    mostrarMensaje("¡Listo! Te suscribiste correctamente.", "exito", input);
+    alert("¡Listo! Tu correo se registró correctamente.");
     input.value = "";
   });
 }
 
 function validarEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function mostrarMensaje(texto, tipo, referencia) {
-  const existente = referencia.parentElement.querySelector(".mensaje-suscripcion");
-  if (existente) existente.remove();
-
-  const mensaje = document.createElement("span");
-  mensaje.className = "mensaje-suscripcion";
-  mensaje.textContent = texto;
-  mensaje.style.display = "block";
-  mensaje.style.fontSize = "12.5px";
-  mensaje.style.marginTop = "-6px";
-  mensaje.style.marginBottom = "10px";
-  mensaje.style.color = tipo === "error" ? "var(--red)" : "var(--green)";
-
-  referencia.insertAdjacentElement("afterend", mensaje);
 }
 
 initFiltrosCategoria();
