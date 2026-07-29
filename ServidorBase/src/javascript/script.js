@@ -44,7 +44,7 @@ async function cargarPagina(nombre) {
 }
 // Checando rutas
 function navegar(pagina){
-
+    event.preventDefault();
     history.pushState(
         {},
         "",
