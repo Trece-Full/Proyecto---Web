@@ -1,10 +1,74 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inicio</title>
+<link rel="stylesheet" href="../css/theme.css" />
+<link rel="stylesheet" href="../css/inicio.css" />
 </head>
 <body>
-    <p>Esta es el inicio de ejemplo.</p>
+
+<div>
+  <div class="container">
+    <div class="layout">
+      <div class="left-col">
+        <div class="hero">
+          <img src="https://images.unsplash.com/photo-1581093577421-f561a654a353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Laboratorio de innovación tecnológica" />
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="hero-tag-row">
+              <span class="badge" id="hero-badge"></span>
+              <span class="hero-tag-label">NOTICIA DESTACADA</span>
+            </div>
+            <h1 class="hero-title">Inauguran nuevo laboratorio de innovación tecnológica</h1>
+            <p class="hero-excerpt">El nuevo laboratorio brindará a los estudiantes herramientas de última tecnología para el desarrollo de proyectos e investigación.</p>
+            <div class="hero-meta">
+              <span class="hero-time" id="hero-time"></span>
+              <button class="hero-readmore" id="hero-readmore">Leer más</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-header">
+            <h2 class="section-title">ÚLTIMAS NOTICIAS</h2>
+            <button class="ver-todas-btn" id="ver-todas-noticias">VER TODAS</button>
+          </div>
+          <div class="news-grid" id="news-grid"></div>
+        </div>
+      </div>
+
+      <div class="right-col">
+        <div class="panel">
+          <div class="panel-header">LO MÁS IMPORTANTE</div>
+          <div id="important-list"></div>
+          <div class="panel-footer">
+            <button class="panel-footer-btn">VER TODOS LOS AVISOS →</button>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-bottom:0;">
+          <div class="panel-header">PRÓXIMOS EVENTOS</div>
+          <div id="events-list"></div>
+          <div class="panel-footer">
+            <button class="panel-footer-btn" id="ver-todos-eventos">VER TODOS LOS EVENTOS →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trivia-bar">
+    <div class="trivia-inner">
+      <div class="trivia-row">
+        <span class="trivia-tag">CURIOSIDAD DEL DÍA</span>
+        <p class="trivia-text" id="trivia-text"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../javascript/incio.js"></script>
 </body>
 </html>
