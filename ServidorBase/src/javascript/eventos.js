@@ -120,11 +120,11 @@ function iniciarPaginaEventos() {
   const FILTERS = ["Todos", "Conferencia", "Taller", "Competencia", "Feria", "Seminario"];
   let activeFilter = "Todos";
 
-  const ICON_MAPPIN = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
-  const ICON_CLOCK = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`;
-  const ICON_USERS = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`;
-  const ICON_CALENDAR = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`;
-  const ICON_CHEVRON = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+  const ICON_MAPPIN = () => "◉";
+  const ICON_CLOCK = () => "◷";
+  const ICON_USERS = () => "◫";
+  const ICON_CALENDAR = () => "▤";
+  const ICON_CHEVRON = () => "›";
 
   function renderFeatured() {
     const wrap = document.getElementById("featured-grid");
@@ -136,13 +136,12 @@ function iniciarPaginaEventos() {
       card.className = "featured-card";
       const color = TYPE_COLORS[event.type] || "#555";
 
-      const metaItems = [
-        { icon: ICON_MAPPIN(11), text: event.location },
-        { icon: ICON_CLOCK(11), text: event.time },
-        { icon: ICON_USERS(11), text: `${event.attendees} cupos` },
-        { icon: ICON_CALENDAR(11), text: `${event.day} ${event.month} ${event.year}` },
-      ].map((m) => `<div class="meta-item">${m.icon} ${m.text}</div>`).join("");
-
+      const metaItems = `
+  <div class="meta-item">${ICON_MAPPIN()} ${event.location}</div>
+  <div class="meta-item">${ICON_CLOCK()} ${event.time}</div>
+  <div class="meta-item">${ICON_USERS()} ${event.attendees} cupos</div>
+  <div class="meta-item">${ICON_CALENDAR()} ${event.day} ${event.month} ${event.year}</div>
+                `;
       card.innerHTML = `
       <div class="featured-image-wrap">
         <img class="featured-image" src="${event.image}" alt="${event.name}" />
@@ -158,7 +157,6 @@ function iniciarPaginaEventos() {
         <h3 class="featured-name">${event.name}</h3>
         <p class="featured-desc">${event.description}</p>
         <div class="featured-meta-grid">${metaItems}</div>
-        <button class="register-btn">REGISTRARSE</button>
       </div>
     `;
       wrap.appendChild(card);
@@ -168,17 +166,27 @@ function iniciarPaginaEventos() {
   function renderFilters() {
     const filtersEl = document.getElementById("filters");
     filtersEl.innerHTML = "";
-    FILTERS.forEach((f) => {
+
+    for (let i = 0; i < FILTERS.length; i++) {
+      const nombreFiltro = FILTERS[i];
+
       const btn = document.createElement("button");
-      btn.className = "filter-btn" + (activeFilter === f ? " active" : "");
-      btn.textContent = f;
-      btn.addEventListener("click", () => {
-        activeFilter = f;
+      btn.textContent = nombreFiltro;
+
+      if (activeFilter === nombreFiltro) {
+        btn.className = "filter-btn active";
+      } else {
+        btn.className = "filter-btn";
+      }
+
+      btn.addEventListener("click", function () {
+        activeFilter = nombreFiltro;
         renderFilters();
         renderEventList();
       });
+
       filtersEl.appendChild(btn);
-    });
+    }
   }
 
   function renderEventList() {
@@ -191,13 +199,21 @@ function iniciarPaginaEventos() {
       const row = document.createElement("div");
       row.className = "event-row";
 
-      const metaItems = [
-        { icon: ICON_MAPPIN(10), text: event.location },
-        { icon: ICON_CLOCK(10), text: event.time },
-        { icon: ICON_USERS(10), text: `${event.attendees} cupos` },
-      ].map((m) => `<span>${m.icon} ${m.text}</span>`).join("");
+      const metaItems = `
+  <span>${ICON_MAPPIN()} ${event.location}</span>
+  <span>${ICON_CLOCK()} ${event.time}</span>
+  <span>${ICON_USERS()} ${event.attendees} cupos</span>
+`;
 
       row.innerHTML = `
+
+      <style>
+      .editar-btn:hover{
+        background: green;
+        color: white
+      }
+      </style>
+
       <div class="date-badge-small">
         <div class="date-day">${event.day}</div>
         <div class="date-month">${event.month}</div>
@@ -211,7 +227,6 @@ function iniciarPaginaEventos() {
         <div class="event-row-meta">${metaItems}</div>
       </div>
       <div class="event-row-actions">
-        <button class="ver-mas-btn">Ver más ${ICON_CHEVRON(13)}</button>
         <button class="editar-btn" onclick="editarEvento(${event.id})">Editar</button>
         <button class="eliminar-btn" onclick="eliminarEvento(${event.id})">Eliminar</button>
       </div>
