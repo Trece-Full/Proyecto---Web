@@ -4,15 +4,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Inicio</title>
+<!-- Estilos -->
 <link rel="stylesheet" href="../css/theme.css" />
 <link rel="stylesheet" href="../css/inicio.css" />
 </head>
-<body>
 
+<!-- Inicio del body -->
+<body>
+<!-- Contenedor principal -->
 <div>
+<!-- Contenedor con la informacion de inicio -->
   <div class="container">
     <div class="layout">
+      <!-- Informacion prinicipal, info de la izquierda -->
       <div class="left-col">
+        <!-- La noticia "hero" o principal (Se piensa cambiar por una bienvenida) -->
         <div class="hero">
           <img src="https://images.unsplash.com/photo-1581093577421-f561a654a353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Laboratorio de innovación tecnológica" />
           <div class="hero-overlay"></div>
@@ -30,26 +36,32 @@
           </div>
         </div>
 
+        <!-- Espacio de noticias -->
         <div>
           <div class="section-header">
             <h2 class="section-title">ÚLTIMAS NOTICIAS</h2>
             <button class="ver-todas-btn" id="ver-todas-noticias">VER TODAS</button>
+            <!-- Noticias, este apartado se llean directamente desde el css -->
           </div>
           <div class="news-grid" id="news-grid"></div>
         </div>
       </div>
 
+      <!-- Parte derecha o sidebar derecho -->
       <div class="right-col">
+        <!-- Panel superior del sidebar derecho-->
         <div class="panel">
           <div class="panel-header">LO MÁS IMPORTANTE</div>
+          <!-- LLenado de elementos importantes desde js-->
           <div id="important-list"></div>
           <div class="panel-footer">
             <button class="panel-footer-btn">VER TODOS LOS AVISOS →</button>
           </div>
         </div>
-
+        <!-- Panel inferior o de eventos-->
         <div class="panel" style="margin-bottom:0;">
           <div class="panel-header">PRÓXIMOS EVENTOS</div>
+          <!-- LLenado de eventos desde js-->
           <div id="events-list"></div>
           <div class="panel-footer">
             <button class="panel-footer-btn" id="ver-todos-eventos">VER TODOS LOS EVENTOS →</button>
@@ -58,7 +70,7 @@
       </div>
     </div>
   </div>
-
+  <!-- Contenedor con curiosidades-->
   <div class="trivia-bar">
     <div class="trivia-inner">
       <div class="trivia-row">

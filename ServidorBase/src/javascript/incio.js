@@ -2,8 +2,7 @@ const CATEGORY_CONFIG = {
   noticias:     { bg: "#1565C0", label: "NOTICIAS" },
   aviso:        { bg: "#1565C0", label: "AVISO" },
   evento:       { bg: "#2e7d32", label: "EVENTO" },
-  convocatoria: { bg: "#e65100", label: "CONVOCATORIA" },
-  publicacion:  { bg: "#6a1b9a", label: "PUBLICACIÓN" },
+  //En este apartado se quitó publicaciones y eventos ya que las secciones fueron reducidas
 };
 
 function categoryBadgeHTML(category) {
@@ -14,8 +13,7 @@ function categoryBadgeHTML(category) {
 const IMPORTANT_ITEMS = [
   { category: "aviso", title: "No habrá clases el viernes 30 de mayo por junta académica", time: "Hace 2 horas" },
   { category: "evento", title: "Hackathon 2025: competencia de desarrollo", time: "Hace 3 horas" },
-  { category: "convocatoria", title: "Becas de movilidad internacional 2025", time: "Hace 1 día" },
-  { category: "publicacion", title: "Nueva revista estudiantil ya disponible", time: "Hace 2 días" },
+  //En este apartado se quitó publicaciones y eventos ya que las secciones fueron reducidas
 ];
 
 const LATEST_NEWS = [
