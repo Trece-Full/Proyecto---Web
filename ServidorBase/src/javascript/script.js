@@ -42,5 +42,33 @@ async function cargarPagina(nombre) {
     }
 
 }
+// Checando rutas
+function navegar(pagina){
 
-cargarPagina("inicio");
+    history.pushState(
+        {},
+        "",
+        "/" + pagina
+    );
+
+    cargarPagina(pagina);
+
+}
+
+function cargarRutaActual(){
+    let ruta = window.location.pathname;
+
+    if(ruta === "/"){
+        cargarPagina("inicio");
+    }else{
+        let pagina = ruta.substring(1);
+        cargarPagina(pagina);
+    }
+}
+
+cargarRutaActual();
+
+window.addEventListener("popstate", () =>{
+    cargarRutaActual();
+});
+//cargarPagina("inicio");
