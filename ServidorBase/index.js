@@ -42,7 +42,8 @@ const paginas = [
     "eventos",
     "foro",
     "inicio",
-    "noticias"
+    "noticias",
+    "iniciosesion"
 ];
 
 // Rutas dinamicas
