@@ -1,0 +1,207 @@
+body,html{
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+*{
+
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width:768px){
+
+    .divMain{
+
+        flex-direction: column;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .divIzquierda,
+    .divDerecha{
+
+        width:100%;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .divContenido{
+        width:90%;
+    }
+
+}
+
+.logoX{
+    width:450px;
+}
+
+
+@media (max-width:768px){
+
+    .logoX{
+        width:180px;
+    }
+
+}
+
+.divMain{
+    height:100%;
+    background: #07122a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width:768px){
+
+    .divContenido{
+
+        width:90%;
+
+    }
+
+}
+
+
+a{
+
+    padding: 5px;
+    color: rgb(169, 169, 169);
+    font-size: 13px;
+    text-decoration: none;  
+}
+
+a:hover{
+
+    text-decoration: underline;
+}
+
+p{
+    color: rgb(169, 169, 169);;
+}
+
+.divMain{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 25px;
+}
+
+.divMain h1{
+    color: #145fc0;
+}
+
+hr{
+    display: flex;
+    align-items: center;
+    border: none;
+    height: 1px;
+    background-color: gray;
+    width: 150px;
+    
+}
+
+#o{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+span{
+
+    width: 250px;
+}
+
+.divContenido{
+
+    background: rgb(19, 17, 17);
+    width: 22%;
+    background: #0d1b3e;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 18px;
+
+    box-shadow: 0 0 15px rgba(59,130,246,.4);
+    
+}
+
+.pGoogle{
+
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.divBtnGoogle{
+
+    width: 300px;
+    height: 40px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.divBtnInicio{
+    
+
+
+
+}
+
+input{
+
+    width: 300px;
+    height: 30px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.divBtnIniciar{
+
+    border-radius: 20px;
+    padding: 10px;
+    width: 235px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid gray;
+
+    margin-top: 40px;
+}
+
+
+p{
+
+    color: white;
+}
+
+
+
+
+
+
