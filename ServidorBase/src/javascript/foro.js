@@ -223,7 +223,23 @@
         
         ${thread.author === "Tú"
 
-                ? `<button id="eliminar">🗑 Eliminar</button>`
+                ?
+
+                `
+
+<button id="editar">
+
+    ✏️ Editar
+
+</button>
+
+<button id="eliminar">
+
+    🗑 Eliminar
+
+</button>
+
+`
 
                 : ""
 
@@ -293,6 +309,16 @@
             lista.style.display = "block";
 
         };
+        // Uso de editar
+        if (thread.author === "Tú") {
+
+            document.getElementById("editar").onclick = () => {
+
+                editarDiscusion(thread.id);
+
+            };
+
+        }
 
         // Uso de eliminar
         const btnEliminar = document.getElementById("eliminar");
@@ -408,42 +434,63 @@
     });
 
     // Editar
-    async function editarDiscusion(id) {
+    async function editarDiscusion(id){
 
-        await fetch(`${API_URL}/${id}`, {
+    const thread = threads.find(t => t.id == id);
 
-            method: "PUT",
+    const nuevoTitulo = prompt("Nuevo título:", thread.title);
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+    const nuevoContenido = prompt("Nuevo contenido:", thread.content);
 
-            body: JSON.stringify({
-                title: "Nuevo titulo"
-            })
 
-        });
+    if(!nuevoTitulo || !nuevoContenido){
+        return;
+    }
 
-        cargarDiscusiones();
 
-    };
+    await fetch(`${API_URL}/${id}`,{
 
-    // Eliminar 
-    async function eliminarDiscusion(id){
+        method:"PUT",
 
-    const respuesta = await fetch(`${API_URL}/${id}`, {
-        method: "DELETE"
+        headers:{
+            "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify({
+
+            title:nuevoTitulo,
+
+            content:nuevoContenido,
+
+            category:thread.category
+
+        })
+
     });
 
-    console.log("DELETE:", respuesta.status);
 
     await cargarDiscusiones();
 
-    console.log("Threads después de recargar:", threads);
+    mostrarDetalle(id);
 
-    document.getElementById("detalleDiscusion").classList.add("oculto");
-    document.getElementById("listaDiscusiones").style.display = "block";
 }
+
+    // Eliminar 
+    async function eliminarDiscusion(id) {
+
+        const respuesta = await fetch(`${API_URL}/${id}`, {
+            method: "DELETE"
+        });
+
+        console.log("DELETE:", respuesta.status);
+
+        await cargarDiscusiones();
+
+        console.log("Threads después de recargar:", threads);
+
+        document.getElementById("detalleDiscusion").classList.add("oculto");
+        document.getElementById("listaDiscusiones").style.display = "block";
+    }
 
 
 

@@ -494,3 +494,30 @@ app.delete("/api/foro/:id", (req, res) => {
     });
 
 });
+
+// Editar discusiones
+app.put("/api/foro/:id", (req, res) => {
+
+    const id = Number(req.params.id);
+
+    const thread = threads.find(thread => thread.id === id);
+
+    if (!thread) {
+        return res.status(404).json({
+            mensaje: "Discusión no encontrada"
+        });
+    }
+
+
+    thread.title = req.body.title;
+    thread.content = req.body.content;
+    thread.preview = req.body.content.substring(0,120) + "...";
+    thread.category = req.body.category;
+
+
+    res.json({
+        mensaje: "Discusión actualizada correctamente",
+        discusion: thread
+    });
+
+});
