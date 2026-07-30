@@ -1,66 +1,66 @@
 // Conexión con el servidor
-(()=>{
+(() => {
 
-const API_URL = "https://proyecto-web-rose.vercel.app/api/inicio";
-
-
-//VARIABLES
-
-let hero = {};
-
-let noticias = [];
-
-let importantes = [];
-
-let eventos = [];
-
-let trivia = "";
-
-const ICON_CLOCK = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`;
-const ICON_CHEVRON = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
-const ICON_ARROW = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
-const ICON_MAPPIN = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
-
-// Colores de las categoria
-const CATEGORY_CONFIG = {
-    noticias: {
-        bg: "#1565C0",
-        label: "NOTICIAS"
-    },
-
-    aviso: {
-        bg: "#c03d15",
-        label: "AVISO"
-    },
-
-    evento: {
-        bg: "#2e7d32",
-        label: "EVENTO"
-    }
-};
-
-const bievenida =
-{
-  title: "Pendiente",
-  image: "https://www.lifeder.com/wp-content/uploads/2019/12/matematicas-concepto-lifeder-min.jpg",
-  excerpt: "Pendiente"
-}
-;
+    const API_URL = "https://proyecto-web-rose.vercel.app/api/inicio";
 
 
+    //VARIABLES
 
+    let hero = {};
 
-function categoryBadgeHTML(category) {
+    let noticias = [];
 
-    const cfg = CATEGORY_CONFIG[category] || {
+    let importantes = [];
 
-        bg: "#1565C0",
+    let eventos = [];
 
-        label: category.toUpperCase()
+    let trivia = "";
 
+    const ICON_CLOCK = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`;
+    const ICON_CHEVRON = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+    const ICON_ARROW = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+    const ICON_MAPPIN = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
+
+    // Colores de las categoria
+    const CATEGORY_CONFIG = {
+        noticias: {
+            bg: "#1565C0",
+            label: "NOTICIAS"
+        },
+
+        aviso: {
+            bg: "#c03d15",
+            label: "AVISO"
+        },
+
+        evento: {
+            bg: "#2e7d32",
+            label: "EVENTO"
+        }
     };
 
-    return `
+    const bievenida =
+    {
+        title: "Pendiente",
+        image: "https://www.lifeder.com/wp-content/uploads/2019/12/matematicas-concepto-lifeder-min.jpg",
+        excerpt: "Pendiente"
+    }
+        ;
+
+
+
+
+    function categoryBadgeHTML(category) {
+
+        const cfg = CATEGORY_CONFIG[category] || {
+
+            bg: "#1565C0",
+
+            label: category.toUpperCase()
+
+        };
+
+        return `
         <span
             class="badge"
             style="background-color:${cfg.bg};">
@@ -70,80 +70,80 @@ function categoryBadgeHTML(category) {
         </span>
     `;
 
-}
+    }
 
 
 
 
 
-// Obtener datos del servidor
-async function cargarInicio() {
+    // Obtener datos del servidor
+    async function cargarInicio() {
 
-    try {
+        try {
 
-        const respuesta = await fetch(API_URL);
+            const respuesta = await fetch(API_URL);
 
-        const datos = await respuesta.json();
+            const datos = await respuesta.json();
 
-        hero = datos.hero;
+            hero = datos.hero;
 
-        noticias = datos.noticias;
+            noticias = datos.noticias;
 
-        importantes = datos.importantes;
+            importantes = datos.importantes;
 
-        eventos = datos.eventos;
+            eventos = datos.eventos;
 
-        trivia = datos.trivia;
+            trivia = datos.trivia;
 
-        renderBienvenida();
+            renderBienvenida();
 
-        renderNews();
+            renderNews();
 
-        renderImportant();
+            renderImportant();
 
-        renderEvents();
+            renderEvents();
 
-        renderTrivia();
+            renderTrivia();
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+        }
 
     }
 
-    catch(error){
 
-        console.error(error);
+
+    function renderBienvenida() {
+
+        document.getElementById("hero-image").src = bievenida.image;
+
+        document.getElementById("hero-title").textContent = bievenida.title;
+
+        document.getElementById("hero-excerpt").textContent = bievenida.excerpt;
+
+
+
+
 
     }
 
-}
+    function renderNews() {
 
+        const grid = document.getElementById("news-grid");
 
+        grid.innerHTML = "";
 
-function renderBienvenida() {
+        noticias.forEach(news => {
 
-    document.getElementById("hero-image").src = bievenida.image;
+            const card = document.createElement("div");
 
-    document.getElementById("hero-title").textContent = bievenida.title;
+            card.className = "news-card";
 
-    document.getElementById("hero-excerpt").textContent = bievenida.excerpt;
-
-
-
-    
-
-}
-
-function renderNews() {
-
-    const grid = document.getElementById("news-grid");
-
-    grid.innerHTML = "";
-
-    noticias.forEach(news => {
-
-        const card = document.createElement("div");
-
-        card.className = "news-card";
-
-        card.innerHTML = `
+            card.innerHTML = `
 
             <img src="${news.imagen}" alt="${news.titulo}">
 
@@ -189,25 +189,25 @@ function renderNews() {
 
         `;
 
-        grid.appendChild(card);
+            grid.appendChild(card);
 
-    });
+        });
 
-}
+    }
 
-function renderImportant() {
+    function renderImportant() {
 
-    const wrap = document.getElementById("important-list");
+        const wrap = document.getElementById("important-list");
 
-    wrap.innerHTML = "";
+        wrap.innerHTML = "";
 
-    importantes.forEach(item => {
+        importantes.forEach(item => {
 
-        const div = document.createElement("div");
+            const div = document.createElement("div");
 
-        div.className = "panel-item";
+            div.className = "panel-item";
 
-        div.innerHTML = `
+            div.innerHTML = `
 
             <div class="panel-item-badge">
 
@@ -231,25 +231,25 @@ function renderImportant() {
 
         `;
 
-        wrap.appendChild(div);
+            wrap.appendChild(div);
 
-    });
+        });
 
-}
+    }
 
-function renderEvents() {
+    function renderEvents() {
 
-    const wrap = document.getElementById("events-list");
+        const wrap = document.getElementById("events-list");
 
-    wrap.innerHTML = "";
+        wrap.innerHTML = "";
 
-    eventos.forEach(event => {
+        eventos.forEach(event => {
 
-        const div = document.createElement("div");
+            const div = document.createElement("div");
 
-        div.className = "event-item";
+            div.className = "event-item";
 
-        div.innerHTML = `
+            div.innerHTML = `
 
             <div class="event-date-badge">
 
@@ -293,40 +293,43 @@ function renderEvents() {
 
         `;
 
-        wrap.appendChild(div);
+            wrap.appendChild(div);
 
-    });
+        });
 
-}
+    }
 
-function renderTrivia(){
+    function renderTrivia() {
 
-    document.getElementById("trivia-text").textContent = trivia;
+        document.getElementById("trivia-text").textContent = trivia;
 
-}
+    }
 
-function onSectionChange(sectionId){
+    function onSectionChange(sectionId) {
 
-    navegar(sectionId);
+        navegar(sectionId);
 
-}
+    }
 
-async function init(){
+    async function init() {
 
-    await cargarInicio();
+        await cargarInicio();
 
-    document.getElementById("ver-todas-noticias").innerHTML =
-        `VER TODAS ${ICON_CHEVRON(12)}`;
+        document.getElementById("ver-todas-noticias").innerHTML =
+            `VER TODAS ${ICON_CHEVRON(12)}`;
 
-    document.getElementById("ver-todos-eventos")
-        .addEventListener("click", () => onSectionChange("eventos"));
+        document.getElementById("ver-todas-noticias")
+            .addEventListener("click", () => onSectionChange("noticias"));
 
-    document.getElementById("ver-todos-avisos")
-        .addEventListener("click", () => onSectionChange("avisos"));
+        document.getElementById("ver-todos-eventos")
+            .addEventListener("click", () => onSectionChange("eventos"));
 
-}
+        document.getElementById("ver-todos-avisos")
+            .addEventListener("click", () => onSectionChange("avisos"));
 
-init();
+    }
+
+    init();
 
 })();
 
