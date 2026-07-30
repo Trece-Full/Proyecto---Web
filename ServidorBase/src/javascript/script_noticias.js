@@ -1,5 +1,5 @@
 (() =>{
-  const API_URL = "https://proyecto-web-rose.vercel.app/api/noticias"
+  const API_URL = "http://localhost:3000/api/noticias"
 
 /* 1. DATOS */
 
@@ -30,14 +30,14 @@ async function cargarNoticias(){
 
 function pintarHero() {
   const heroe = document.getElementById('hero-destacada');
-  heroe.style.backgroundImage = `url('${hero.image}')`;
+  heroe.style.backgroundImage = `url('${hero.imagen}')`;
   heroe.innerHTML = `
     <div class="hero-contenido">
       <span class="badge-destacada">Noticia destacada</span>
-      <h2>${hero.title}</h2>
-      <p>${hero.excerpt}</p>
+      <h2>${hero.titulo}</h2>
+      <p>${hero.resumen}</p>
       <div class="hero-meta">
-        <span>🕒 ${hero.time}</span>
+        <span>🕒 ${hero.tiempo}</span>
         <a href="#" class="btn-leer-mas" data-tipo="destacada">Leer más →</a>
       </div>
     </div>
@@ -101,7 +101,7 @@ function activarModal() {
     evento.preventDefault(); // evita que se comporte como hipervínculo
 
     if (boton.dataset.tipo === 'destacada') {
-      abrirModal(noticiaDestacada);
+      abrirModal(hero);
     } else {
       const indice = Number(boton.dataset.indice);
       abrirModal(noticias[indice]);

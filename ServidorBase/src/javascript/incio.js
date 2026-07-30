@@ -177,11 +177,7 @@
 
                     </span>
 
-                    <button class="news-readmore">
-
-                        Leer más →
-
-                    </button>
+                   
 
                 </div>
 
@@ -194,6 +190,14 @@
         });
 
     }
+
+    /*
+ <button class="news-readmore">
+
+                        Leer más →
+
+                    </button>
+    */
 
     function renderImportant() {
 

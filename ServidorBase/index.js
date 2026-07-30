@@ -102,11 +102,12 @@ app.post("/iniciosesion", (req, res) => {
 // Noticia principal
 const hero =
 {
-    category: "noticias",
-    title: "Fuertes lluvias inundan el Tec de Tepic",
-    excerpt: "En los ultímos días de estos meses se han reportado lluvias que impiden el acceso y salida del plantel.",
-    image: "https://humanidades.com/wp-content/uploads/2018/10/lluvia-3-e1581819535291.jpg",
-    time: "Hace 3 horas"
+    categoria: "noticias",
+    titulo: "Fuertes lluvias inundan el Tec de Tepic",
+    resumen: "En los ultímos días de estos meses se han reportado lluvias que impiden el acceso y salida del plantel.",
+    imagen: "https://humanidades.com/wp-content/uploads/2018/10/lluvia-3-e1581819535291.jpg",
+    tiempo: "Hace 3 horas",
+    contenido: "SE INUNDÓ EL TEC"
 }
     ;
 
