@@ -107,7 +107,7 @@ const hero =
     resumen: "En los ultímos días de estos meses se han reportado lluvias que impiden el acceso y salida del plantel.",
     imagen: "https://humanidades.com/wp-content/uploads/2018/10/lluvia-3-e1581819535291.jpg",
     tiempo: "Hace 3 horas",
-    contenido: "SE INUNDÓ EL TEC"
+    contenido: "SE INUNDÓ EL TEC. Las intensas precipitaciones reportadas en la capital nayarita han vuelto a colapsar los accesos principales del Instituto Tecnológico de Tepic. El agua acumulada impide por completo la entrada y salida de estudiantes y personal del plantel."
 }
     ;
 
