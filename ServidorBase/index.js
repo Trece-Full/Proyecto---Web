@@ -267,7 +267,132 @@ let eventos = [
 trivia = "¿Sabías que Ada Lovelace fue considerada la primera programadora?"
 
 let threads =[
-    
+    {
+
+        id: 1,
+
+        category: "academico",
+
+        title: "¿Cuáles son los mejores consejos para el examen de cálculo diferencial?",
+
+        preview: "Tengo el parcial la próxima semana y me está costando trabajo entender los límites y derivadas.",
+
+        content: "Hola a todos. Tengo el parcial de cálculo diferencial la próxima semana y necesito algunos consejos para prepararme. ¿Qué libros, videos o ejercicios me recomiendan?",
+
+        author: "Sofía Ramírez",
+
+        career: "Ing. en Sistemas",
+
+        date: "Hace 2 horas",
+
+
+
+        views: 312,
+
+        pinned: true,
+
+        replies: [
+
+            {
+
+                id: 1,
+
+                author: "Carlos Mendoza",
+
+                career: "Ing. Civil",
+
+                content: "Te recomiendo muchísimo los videos de 3Blue1Brown.",
+
+
+
+            },
+
+            {
+
+                id: 2,
+
+                author: "María González",
+
+                career: "Ing. Industrial",
+
+                content: "Practica muchos ejercicios de límites y derivadas.",
+
+
+
+            }
+
+        ]
+
+    },
+
+    {
+
+        id: 2,
+
+        category: "general",
+
+        title: "¿Qué opinan del nuevo horario de la cafetería?",
+
+        preview: "Ahora cierra más temprano y muchos estudiantes nos quedamos sin comer.",
+
+        content: "La cafetería ahora cierra a las 6 PM. ¿Creen que deberían volver al horario anterior?",
+
+        author: "Luis Hernández",
+
+        career: "Administración",
+
+        date: "Hace 4 horas",
+
+
+
+        views: 587,
+
+        pinned: false,
+
+        replies: [
+
+            {
+
+                id: 1,
+
+                author: "Ana Torres",
+
+                career: "Arquitectura",
+
+                content: "Sí, afecta bastante al turno vespertino.",
+
+
+
+            }
+
+        ]
+
+    },
+
+    {
+
+        id: 3,
+
+        category: "tecnologia",
+
+        title: "Recursos para aprender JavaScript",
+
+        preview: "Comparto algunos cursos gratuitos para comenzar desde cero.",
+
+        content: "Les recomiendo freeCodeCamp, The Odin Project y la documentación de MDN.",
+
+        author: "Diego Flores",
+
+        career: "Ing. en Sistemas",
+
+        date: "Hace 1 día",
+
+        pinned: false,
+
+        replies: []
+
+    }
+
 ]
 
 app.get("/api/inicio",(req,res)=>{
@@ -294,10 +419,62 @@ app.get("/api/noticias",(req,res)=>{
 
         hero,
 
-        noticias: noticias
+        noticias
 
         
 
     });
 
 });
+// USO COMPLETO DE CRUD
+let idForo = threads.length +1 ;
+
+app.get("/api/foro",(req,res)=>{
+    res.json(threads);
+
+});
+
+app.post("/api/foro", (req,res)=>{
+    try{
+
+    const nuevaDiscusion = {
+
+        id: idForo++,
+
+        category: req.body.category,
+
+        title: req.body.title,
+
+        preview: req.body.preview,
+
+        content: req.body.content,
+
+        author: req.body.author,
+
+        career: req.body.career,
+
+        date: req.body.date,
+
+        pinned: req.body.pinned,
+
+        replies: []
+
+    };
+
+
+    threads.push(nuevaDiscusion);
+
+    res.status(201).json({
+        mensaje:"Discusión creada correctamente",
+        discusion:nuevaDiscusion
+    });
+}catch(error){
+    console.error(error);
+    res.status(500).json({
+        mensaje: "Error interno de capa 8",
+        error:error.message
+    });
+}
+
+});
+
