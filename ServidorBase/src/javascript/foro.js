@@ -2,7 +2,7 @@
     //==============================
     // VARIABLES GLOBALES
     //==============================
-    const API_URL = "http://localhost:3000/api/foro"
+    const API_URL = "https://proyecto-web-rose.vercel.app//api/foro"
 
     let activeCategory = "todos";
     let selectedThread = null;
