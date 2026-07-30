@@ -2,7 +2,7 @@
     //==============================
     // VARIABLES GLOBALES
     //==============================
-    const API_URL = "https://proyecto-web-rose.vercel.app/api/foro"
+    const API_URL = "http://localhost:3000/api/foro"
 
     let activeCategory = "todos";
     let selectedThread = null;
@@ -179,7 +179,7 @@
     //========================================
     // MOSTRAR DETALLE
     //========================================
-
+    //Función donde se aplica el crud
     function mostrarDetalle(id) {
 
         const detalle = document.getElementById("detalleDiscusion");
@@ -293,6 +293,23 @@
             lista.style.display = "block";
 
         };
+
+        // Uso de eliminar
+        const btnEliminar = document.getElementById("eliminar");
+
+        if (btnEliminar) {
+
+            btnEliminar.onclick = async () => {
+
+                if (!confirm("¿Eliminar esta discusión?")) return;
+
+                await eliminarDiscusion(thread.id);
+
+                detalle.classList.add("oculto");
+                lista.style.display = "block";
+            };
+
+        }
 
     }
 
@@ -411,18 +428,24 @@
 
     };
 
-    async function eliminarDiscusion(id) {
+    // Eliminar 
+    async function eliminarDiscusion(id){
 
-        await fetch(`${API_URL}/${id}`, {
+    const respuesta = await fetch(`${API_URL}/${id}`, {
+        method: "DELETE"
+    });
 
-            method: "DELETE"
+    console.log("DELETE:", respuesta.status);
 
-        });
+    await cargarDiscusiones();
+
+    console.log("Threads después de recargar:", threads);
+
+    document.getElementById("detalleDiscusion").classList.add("oculto");
+    document.getElementById("listaDiscusiones").style.display = "block";
+}
 
 
-        await cargarDiscusiones();
-
-    }
 
 
     //========================================
