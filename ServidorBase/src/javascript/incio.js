@@ -321,6 +321,9 @@ async function init(){
     document.getElementById("ver-todos-eventos")
         .addEventListener("click", () => onSectionChange("eventos"));
 
+    document.getElementById("ver-todos-avisos")
+        .addEventListener("click", () => onSectionChange("avisos"));
+
 }
 
 init();
