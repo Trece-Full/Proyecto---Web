@@ -374,6 +374,11 @@
 
 
         await cargarDiscusiones();
+        await cargarDiscusiones();
+
+        document.getElementById("titulo").value = "";
+        document.getElementById("contenido").value = "";
+        modal.classList.add("oculto");
 
     });
 
