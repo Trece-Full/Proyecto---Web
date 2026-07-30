@@ -69,7 +69,7 @@ let threads = [
 
         date: "Hace 2 horas",
 
-        likes: 18,
+
 
         views: 312,
 
@@ -87,7 +87,7 @@ let threads = [
 
                 content: "Te recomiendo muchísimo los videos de 3Blue1Brown.",
 
-                likes: 12
+
 
             },
 
@@ -101,7 +101,7 @@ let threads = [
 
                 content: "Practica muchos ejercicios de límites y derivadas.",
 
-                likes: 8
+
 
             }
 
@@ -127,7 +127,7 @@ let threads = [
 
         date: "Hace 4 horas",
 
-        likes: 44,
+
 
         views: 587,
 
@@ -145,7 +145,7 @@ let threads = [
 
                 content: "Sí, afecta bastante al turno vespertino.",
 
-                likes: 21
+
 
             }
 
@@ -171,7 +171,7 @@ let threads = [
 
         date: "Hace 1 día",
 
-        likes: 97,
+
 
         views: 1240,
 
@@ -269,7 +269,7 @@ function mostrarDiscusiones() {
 
             <div class="info">
 
-                <span> 👍 ${thread.likes}</span>
+
 
                 <span> 💬 ${thread.replies.length}</span>
 
@@ -385,7 +385,7 @@ function mostrarDetalle(id) {
 
                 <br><br>
 
-                👍 ${reply.likes}
+
 
             </div>
 
@@ -467,7 +467,7 @@ document.getElementById("publicar").addEventListener("click", () => {
 
         date: "Ahora",
 
-        likes: 0,
+
 
         views: 1,
 
@@ -520,8 +520,8 @@ document.addEventListener("click", function (e) {
 
             content: texto,
 
-            likes: 0
 
+            
         });
 
         mostrarDetalle(selectedThread.id);
