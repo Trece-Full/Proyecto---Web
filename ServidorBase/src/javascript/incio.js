@@ -41,9 +41,9 @@
 
     const bievenida =
     {
-        title: "Pendiente",
-        image: "https://www.lifeder.com/wp-content/uploads/2019/12/matematicas-concepto-lifeder-min.jpg",
-        excerpt: "Pendiente"
+        title: "Bienvenidos",
+        image: "https://media.istockphoto.com/id/1970631602/es/vector/burbujas-de-di%C3%A1logo-hablando-charlando-discutiendo-concepto.jpg?s=612x612&w=0&k=20&c=e2-W77bxzSs7Sla5GsdpIlyN_dfpTYt4q3Ty8uiURCw=",
+        excerpt: "Mantente al día con los acontecimientos más importantes de nuestra universidad. Aquí encontrarás información relevante para toda la comunidad estudiantil."
     }
         ;
 

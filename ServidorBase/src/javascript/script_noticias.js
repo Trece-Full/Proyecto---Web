@@ -1,5 +1,5 @@
 (() =>{
-  const API_URL = "http://localhost:3000/api/noticias"
+  const API_URL = "https://proyecto-web-rose.vercel.app/api/noticias"
 
 /* 1. DATOS */
 
