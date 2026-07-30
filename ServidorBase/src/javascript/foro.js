@@ -325,7 +325,6 @@
 
         const categoria = document.getElementById("categoria").value;
 
-
         if (titulo == "" || contenido == "") {
 
             alert("Completa todos los campos.");
@@ -336,6 +335,14 @@
 
 
         const nueva = {
+
+            category: categoria,
+
+            title: titulo,
+
+            preview: contenido.substring(0, 120) + "...",
+
+            content: contenido,
 
             category: categoria,
 
