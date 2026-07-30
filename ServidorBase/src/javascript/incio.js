@@ -1,3 +1,4 @@
+(function () {
 const CATEGORY_CONFIG = {
   noticias:     { bg: "#1565C0", label: "NOTICIAS" },
   aviso:        { bg: "#1565C0", label: "AVISO" },
@@ -135,3 +136,4 @@ function init() {
 }
 
 init();
+})();
