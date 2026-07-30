@@ -188,7 +188,7 @@ const importantes = [
 ];
 
 // Eventos 
-const eventos = [
+let eventos = [
     {
       id: 1, day: "28", month: "MAY", year: "2025",
       name: "Hackathon 2025: Competencia de Desarrollo",
@@ -266,6 +266,10 @@ const eventos = [
 // Curisosidad 
 trivia = "¿Sabías que Ada Lovelace fue considerada la primera programadora?"
 
+let threads =[
+    
+]
+
 app.get("/api/inicio",(req,res)=>{
 
     res.json({
@@ -284,3 +288,16 @@ app.get("/api/inicio",(req,res)=>{
 
 });
 
+app.get("/api/noticias",(req,res)=>{
+
+    res.json({
+
+        hero,
+
+        noticias: noticias
+
+        
+
+    });
+
+});

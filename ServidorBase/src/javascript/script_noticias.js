@@ -1,95 +1,59 @@
-(function () {
+(() =>{
+  const API_URL = "http://localhost:3000/api/noticias"
 
 /* 1. DATOS */
 
-const noticiaDestacada = {
-  imagen: "https://picsum.photos/seed/laboratorio-tec/1200/600",
-  titulo: "Inauguran nuevo laboratorio de innovación tecnológica",
-  resumen: "El nuevo laboratorio brindará a los estudiantes herramientas de última tecnología para el desarrollo de proyectos e investigación.",
-  contenido: "El nuevo laboratorio brindará a los estudiantes herramientas de última tecnología para el desarrollo de proyectos e investigación. Cuenta con equipos de cómputo de alto rendimiento, impresoras 3D, kits de robótica y espacios de trabajo colaborativo. Se espera que este espacio impulse proyectos de titulación, hackathones internos y colaboraciones con la industria. Las inscripciones para hacer uso del laboratorio estarán disponibles a partir de la próxima semana a través de la coordinación de carrera.",
-  tiempo: "Hace 3 horas",
-  categoria: "Noticias"
-};
+let hero = {};
 
-const listaNoticias = [
-  {
-    imagen: "https://picsum.photos/seed/hackathon-isc/1000/500",
-    categoria: "Noticias",
-    titulo: "Estudiantes ganan concurso nacional de programación",
-    resumen: "El equipo de ISC obtuvo el primer lugar en la competencia organizada por la ANIEI.",
-    contenido: "El equipo de ISC obtuvo el primer lugar en la competencia organizada por la ANIEI, superando a más de 40 equipos de universidades de todo el país. Durante 24 horas continuas, los estudiantes desarrollaron una solución de software enfocada en la optimización de rutas de transporte urbano. El equipo estuvo compuesto por 4 estudiantes de los últimos semestres, quienes destacaron el trabajo en equipo y el apoyo de sus asesores como clave para el resultado obtenido.",
-    tiempo: "Hace 5 horas"
-  },
-  {
-    imagen: "https://picsum.photos/seed/biblioteca-digital/1000/500",
-    categoria: "Noticias",
-    titulo: "Nueva biblioteca digital disponible",
-    resumen: "Accede a miles de libros y recursos académicos desde cualquier dispositivo.",
-    contenido: "Accede a miles de libros y recursos académicos desde cualquier dispositivo. La nueva plataforma digital incluye libros de texto, revistas científicas y bases de datos especializadas para todas las carreras. El acceso es gratuito para toda la comunidad estudiantil usando las credenciales institucionales, y estará disponible tanto desde la computadora como desde una aplicación móvil que se lanzará en las próximas semanas.",
-    tiempo: "Hace 1 día"
-  },
-  {
-    imagen: "https://picsum.photos/seed/mentorias-2025/1000/500",
-    categoria: "Noticias",
-    titulo: "Programa de mentorías abre inscripciones",
-    resumen: "Conéctate con estudiantes y egresados que pueden orientar tu desarrollo académico.",
-    contenido: "Conéctate con estudiantes y egresados que pueden orientar tu desarrollo académico. El programa de mentorías busca acompañar a los estudiantes de primeros semestres con el apoyo de compañeros de semestres avanzados y egresados que ya se encuentran laborando en la industria. Las sesiones serán quincenales y podrán realizarse de forma presencial o en línea, según la disponibilidad de cada mentor.",
-    tiempo: "Hace 2 días"
-  },
-  {
-    imagen: "https://picsum.photos/seed/semana-ciencia/1000/500",
-    categoria: "Noticias",
-    titulo: "Semana de la ciencia y tecnología 2025",
-    resumen: "Talleres, conferencias y exposiciones abiertas a toda la comunidad estudiantil.",
-    contenido: "Talleres, conferencias y exposiciones abiertas a toda la comunidad estudiantil. Durante una semana completa, distintos departamentos académicos presentarán proyectos de investigación, demostraciones tecnológicas y conferencias impartidas por especialistas invitados. La entrada es libre y se entregará constancia de participación a quienes asistan a un mínimo de 3 actividades.",
-    tiempo: "Hace 3 días"
-  },
-  {
-    imagen: "https://picsum.photos/seed/labs-computo/1000/500",
-    categoria: "Noticias",
-    titulo: "Renuevan equipos de los laboratorios de cómputo",
-    resumen: "Se instalaron nuevas computadoras y software actualizado en 4 laboratorios.",
-    contenido: "Se instalaron nuevas computadoras y software actualizado en 4 laboratorios. La actualización incluye equipos con mejor capacidad de procesamiento para el desarrollo de aplicaciones, modelado 3D y ejecución de máquinas virtuales. También se instalaron las licencias de software más recientes utilizadas en las distintas materias de la carrera.",
-    tiempo: "Hace 4 días"
-  },
-  {
-    imagen: "https://picsum.photos/seed/egresados-tech/1000/500",
-    categoria: "Noticias",
-    titulo: "Egresados destacan en la industria del software",
-    resumen: "Exalumnos comparten su experiencia trabajando en empresas de tecnología reconocidas.",
-    contenido: "Exalumnos comparten su experiencia trabajando en empresas de tecnología reconocidas. En un conversatorio organizado por la coordinación de carrera, egresados de distintas generaciones platicaron sobre su trayectoria profesional, los retos que enfrentaron al egresar y consejos para los estudiantes que están por concluir sus estudios.",
-    tiempo: "Hace 5 días"
-  }
-];
+let noticias = [];
 
 /*  2. FUNCIONES PARA "PINTAR" EL CONTENIDO EN EL HTML */
 
+
+async function cargarNoticias(){
+
+    const respuesta = await fetch(API_URL);
+
+    const datos = await respuesta.json();
+
+    hero = datos.hero;
+
+    noticias = datos.noticias;
+
+    pintarHero();
+
+    pintarNoticias();
+
+    activarModal();
+
+}
+
 function pintarHero() {
-  const hero = document.getElementById('hero-destacada');
-  hero.style.backgroundImage = `url('${noticiaDestacada.imagen}')`;
-  hero.innerHTML = `
+  const heroe = document.getElementById('hero-destacada');
+  heroe.style.backgroundImage = `url('${hero.image}')`;
+  heroe.innerHTML = `
     <div class="hero-contenido">
       <span class="badge-destacada">Noticia destacada</span>
-      <h2>${noticiaDestacada.titulo}</h2>
-      <p>${noticiaDestacada.resumen}</p>
+      <h2>${hero.title}</h2>
+      <p>${hero.excerpt}</p>
       <div class="hero-meta">
-        <span>🕒 ${noticiaDestacada.tiempo}</span>
+        <span>🕒 ${hero.time}</span>
         <a href="#" class="btn-leer-mas" data-tipo="destacada">Leer más →</a>
       </div>
     </div>
   `;
 }
 
-function pintarNoticias(lista) {
+function pintarNoticias() {
   const contenedor = document.getElementById('grid-noticias');
   contenedor.innerHTML = "";
 
-  if (lista.length === 0) {
+  if (noticias.length === 0) {
     contenedor.innerHTML = "<p>No se encontraron noticias.</p>";
     return;
   }
 
-  lista.forEach((noticia, indice) => {
+  noticias.forEach((noticia, indice) => {
     const tarjeta = document.createElement('div');
     tarjeta.className = 'tarjeta-noticia';
     tarjeta.innerHTML = `
@@ -140,7 +104,7 @@ function activarModal() {
       abrirModal(noticiaDestacada);
     } else {
       const indice = Number(boton.dataset.indice);
-      abrirModal(listaNoticias[indice]);
+      abrirModal(noticias[indice]);
     }
   });
 
@@ -158,8 +122,9 @@ function activarModal() {
 }
 
 /* 4. INICIALIZACIÓN */
+async function init(){
+  await cargarNoticias();
+}
 
-pintarHero();
-pintarNoticias(listaNoticias);
-activarModal();
+init();
 })();

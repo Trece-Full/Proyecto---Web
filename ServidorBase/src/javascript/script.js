@@ -14,22 +14,18 @@ async function cargarPagina(nombre) {
         contenedor.innerHTML = html;
 
         document.querySelectorAll('script[data-seccion-dinamica]').forEach(s => s.remove());
-
         const scriptsViejos = contenedor.querySelectorAll("script");
 
         scriptsViejos.forEach(scriptViejo => {
+
             const scriptNuevo = document.createElement("script");
 
-            for (const atributo of scriptViejo.attributes) {
-                scriptNuevo.setAttribute(atributo.name, atributo.value);
-            }
-
-            scriptNuevo.textContent = scriptViejo.textContent;
+            scriptNuevo.src = scriptViejo.src;
 
             scriptNuevo.setAttribute('data-seccion-dinamica', 'true');
 
-            scriptViejo.remove();
             document.body.appendChild(scriptNuevo);
+
         });
 
     } catch (error) {
@@ -37,13 +33,13 @@ async function cargarPagina(nombre) {
         console.error(error);
 
         document.getElementById("mainContent").innerHTML =
-        "<h2>Error al cargar la página.</h2>";
+            "<h2>Error al cargar la página.</h2>";
 
     }
 
 }
 // Checando rutas
-function navegar(pagina){
+function navegar(pagina) {
     event.preventDefault();
     history.pushState(
         {},
@@ -55,12 +51,12 @@ function navegar(pagina){
 
 }
 
-function cargarRutaActual(){
+function cargarRutaActual() {
     let ruta = window.location.pathname;
 
-    if(ruta === "/"){
+    if (ruta === "/") {
         cargarPagina("inicio");
-    }else{
+    } else {
         let pagina = ruta.substring(1);
         cargarPagina(pagina);
     }
@@ -69,7 +65,7 @@ function cargarRutaActual(){
 cargarRutaActual();
 actualizarFecha();
 
-window.addEventListener("popstate", () =>{
+window.addEventListener("popstate", () => {
     cargarRutaActual();
 });
 //cargarPagina("inicio");

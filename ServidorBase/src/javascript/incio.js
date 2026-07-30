@@ -1,5 +1,25 @@
 // Conexión con el servidor
+(()=>{
+
 const API_URL = "http://localhost:3000/api/inicio";
+
+
+//VARIABLES
+
+let hero = {};
+
+let noticias = [];
+
+let importantes = [];
+
+let eventos = [];
+
+let trivia = "";
+
+const ICON_CLOCK = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`;
+const ICON_CHEVRON = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+const ICON_ARROW = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+const ICON_MAPPIN = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
 
 // Colores de las categoria
 const CATEGORY_CONFIG = {
@@ -19,17 +39,15 @@ const CATEGORY_CONFIG = {
     }
 };
 
-//VARIABLES
+const bievenida =
+{
+  title: "Pendiente",
+  image: "https://www.lifeder.com/wp-content/uploads/2019/12/matematicas-concepto-lifeder-min.jpg",
+  excerpt: "Pendiente"
+}
+;
 
-let hero = {};
 
-let noticias = [];
-
-let importantes = [];
-
-let eventos = [];
-
-let trivia = "";
 
 
 function categoryBadgeHTML(category) {
@@ -55,10 +73,7 @@ function categoryBadgeHTML(category) {
 }
 
 
-const ICON_CLOCK = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`;
-const ICON_CHEVRON = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
-const ICON_ARROW = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
-const ICON_MAPPIN = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
+
 
 
 // Obtener datos del servidor
@@ -80,7 +95,7 @@ async function cargarInicio() {
 
         trivia = datos.trivia;
 
-        renderHero();
+        renderBienvenida();
 
         renderNews();
 
@@ -100,22 +115,19 @@ async function cargarInicio() {
 
 }
 
-function renderHero() {
 
-    document.getElementById("hero-image").src = hero.image;
 
-    document.getElementById("hero-title").textContent = hero.title;
+function renderBienvenida() {
 
-    document.getElementById("hero-excerpt").textContent = hero.excerpt;
+    document.getElementById("hero-image").src = bievenida.image;
 
-    document.getElementById("hero-badge").outerHTML =
-        categoryBadgeHTML(hero.category);
+    document.getElementById("hero-title").textContent = bievenida.title;
 
-    document.getElementById("hero-time").innerHTML =
-        `${ICON_CLOCK(12)} ${hero.time}`;
+    document.getElementById("hero-excerpt").textContent = bievenida.excerpt;
 
-    document.getElementById("hero-readmore").innerHTML =
-        `Leer más ${ICON_ARROW(12)}`;
+
+
+    
 
 }
 
@@ -312,4 +324,7 @@ async function init(){
 }
 
 init();
+
+})();
+
 
