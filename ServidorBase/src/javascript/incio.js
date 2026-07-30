@@ -1,7 +1,7 @@
 // Conexión con el servidor
 (()=>{
 
-const API_URL = "http://localhost:3000/api/inicio";
+const API_URL = "https://proyecto-web-rose.vercel.app/api/inicio";
 
 
 //VARIABLES
