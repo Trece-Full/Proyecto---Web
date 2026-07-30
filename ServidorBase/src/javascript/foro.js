@@ -270,15 +270,14 @@ function mostrarDiscusiones() {
             <div class="info">
 
 
-
                 <span> 💬 ${thread.replies.length}</span>
 
-                <span> 👁 ${thread.views}</span>
 
             </div>
 
         `;
 
+        // No sé por qué el replies.length no sirve.
         tarjeta.addEventListener("click", () => {
 
             mostrarDetalle(thread.id);

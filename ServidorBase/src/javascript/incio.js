@@ -9,7 +9,7 @@ const CATEGORY_CONFIG = {
     },
 
     aviso: {
-        bg: "#1565C0",
+        bg: "#c03d15",
         label: "AVISO"
     },
 
@@ -133,25 +133,25 @@ function renderNews() {
 
         card.innerHTML = `
 
-            <img src="${news.image}" alt="${news.title}">
+            <img src="${news.imagen}" alt="${news.titulo}">
 
             <div class="news-card-body">
 
                 <div class="news-badge-row">
 
-                    ${categoryBadgeHTML(news.category)}
+                    ${categoryBadgeHTML(news.categoria)}
 
                 </div>
 
                 <h3 class="news-title">
 
-                    ${news.title}
+                    ${news.titulo}
 
                 </h3>
 
                 <p class="news-excerpt">
 
-                    ${news.excerpt}
+                    ${news.resumen}
 
                 </p>
 
@@ -161,7 +161,7 @@ function renderNews() {
 
                         ${ICON_CLOCK(10)}
 
-                        ${news.time}
+                        ${news.tiempo}
 
                     </span>
 

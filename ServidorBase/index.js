@@ -111,25 +111,8 @@ const hero =
 ;
 
 // Noticias generales
+
 const noticias = [
-    {
-        id: 1,
-        category: "noticias",
-        title: "Estudiantes ganan concurso nacional",
-        excerpt: "El equipo obtuvo el primer lugar.",
-        image: "https://images.unsplash.com/photo-1631350397792-8e0c2de5b637?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400",
-        time: "Hace 6 horas"
-    },
-    {
-        id: 2,
-        category: "noticias",
-        title: "Nueva biblioteca digital",
-        excerpt: "Disponible para todos los estudiantes.",
-        image: "https://images.unsplash.com/photo-1696197019015-68ef1bf9cb4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400",
-        time: "Hace 1 día"
-    }
-];
-/*
 {
     imagen: "https://picsum.photos/seed/hackathon-isc/1000/500",
     categoria: "Noticias",
@@ -179,7 +162,7 @@ const noticias = [
     tiempo: "Hace 5 días"
   }
 ];
-*/
+
 
 // Importantes
 const importantes = [
@@ -194,27 +177,90 @@ const importantes = [
         category: "evento",
         title: "Hackathon 2025.",
         time: "Hace 3 horas"
-    }
+    },
+    {
+        id: 2,
+        category: "noticia",
+        title: "Inauguran nuevo laboratorio.",
+        time: "Hace 3 ho"
+    },
+
 ];
 
 // Eventos 
 const eventos = [
     {
-        id: 1,
-        day: "28",
-        month: "MAY",
-        name: "Hackathon 2025",
-        location: "Sala Magna",
-        time: "9:00 AM"
+      id: 1, day: "28", month: "MAY", year: "2025",
+      name: "Hackathon 2025: Competencia de Desarrollo",
+      type: "Competencia",
+      location: "Sala Magna, Ingeniería A",
+      time: "9:00 AM - 9:00 PM",
+      organizer: "Departamento de Ingeniería",
+      attendees: 120,
+      description: "Competencia de 24 horas donde equipos de estudiantes desarrollan soluciones tecnológicas para retos sociales. Premios en efectivo y mentoría de expertos de la industria.",
+      image: "https://images.unsplash.com/photo-1719159381981-1327b22aff9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600",
+      featured: true,
     },
     {
-        id: 2,
-        day: "02",
-        month: "JUN",
-        name: "Conferencia IA",
-        location: "Auditorio Central",
-        time: "10:00 AM"
-    }
+      id: 2, day: "02", month: "JUN", year: "2025",
+      name: "Conferencia: IA y el Futuro del Trabajo",
+      type: "Conferencia",
+      location: "Auditorio Central",
+      time: "10:00 AM - 1:00 PM",
+      organizer: "Vicerrectoría Académica",
+      attendees: 250,
+      description: "Panel de expertos en inteligencia artificial discutirán el impacto de la IA en el mercado laboral y las habilidades que los profesionales necesitarán en los próximos años.",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600",
+      featured: true,
+    },
+    {
+      id: 3, day: "05", month: "JUN", year: "2025",
+      name: "Taller de Git y GitHub para Principiantes",
+      type: "Taller",
+      location: "Laboratorio Central, Planta Baja",
+      time: "3:00 PM - 6:00 PM",
+      organizer: "Club de Programación",
+      attendees: 40,
+      description: "Aprende a usar Git y GitHub desde cero. Control de versiones, ramas, pull requests y buenas prácticas de desarrollo colaborativo en equipo.",
+      image: "https://images.unsplash.com/photo-1632910121591-29e2484c0259?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600",
+      featured: false,
+    },
+    {
+      id: 4, day: "10", month: "JUN", year: "2025",
+      name: "Feria de Posgrados y Maestrías 2025",
+      type: "Feria",
+      location: "Explanada Principal",
+      time: "9:00 AM - 4:00 PM",
+      organizer: "Servicios Escolares",
+      attendees: 500,
+      description: "Más de 30 instituciones nacionales e internacionales presentarán sus programas de posgrado. Información sobre becas, financiamiento y procesos de admisión.",
+      image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600",
+      featured: false,
+    },
+    {
+      id: 5, day: "15", month: "JUN", year: "2025",
+      name: "Seminario Internacional de Ciencias Sociales",
+      type: "Seminario",
+      location: "Sala de Conferencias B",
+      time: "8:00 AM - 5:00 PM",
+      organizer: "Facultad de Humanidades",
+      attendees: 80,
+      description: "Seminario de dos días con ponentes internacionales que abordarán temas de sociología, política y economía global desde una perspectiva latinoamericana.",
+      image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600",
+      featured: false,
+    },
+    {
+      id: 6, day: "20", month: "JUN", year: "2025",
+      name: "Taller de Diseño UX/UI con Figma",
+      type: "Taller",
+      location: "Laboratorio de Diseño Digital",
+      time: "10:00 AM - 2:00 PM",
+      organizer: "Coordinación de Diseño",
+      attendees: 30,
+      description: "Taller práctico de diseño de interfaces y experiencia de usuario utilizando Figma. Aprende a crear prototipos interactivos y sistemas de diseño.",
+      image: "https://images.unsplash.com/photo-1581093577421-f561a654a353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600",
+      featured: false,
+    },
 ];
 
 // Curisosidad 
