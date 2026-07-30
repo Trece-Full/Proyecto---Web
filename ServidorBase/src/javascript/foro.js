@@ -1,3 +1,4 @@
+(function () {
 //==============================
 // VARIABLES GLOBALES
 //==============================
@@ -578,3 +579,4 @@ actualizarEstadisticas();
 
 mostrarDiscusiones();
 
+})();
