@@ -220,6 +220,14 @@
         ⬅ Volver
         
         </button>
+        
+        ${thread.author === "Tú"
+
+                ? `<button id="eliminar">🗑 Eliminar</button>`
+
+                : ""
+
+            }
 
         <h2>${thread.title}</h2>
 
@@ -412,7 +420,7 @@
         });
 
 
-        cargarDiscusiones();
+        await cargarDiscusiones();
 
     }
 
