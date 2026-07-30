@@ -3,8 +3,8 @@ function iniciarPaginaEventos() {
 
   const EVENTS_INICIALES = [
     {
-      id: 1, day: "28", month: "MAY", year: "2025",
-      name: "Hackathon 2025: Competencia de Desarrollo",
+      id: 1, day: "28", month: "MAY", year: "2026",
+      name: "Hackathon 2026: Competencia de Desarrollo",
       type: "Competencia",
       location: "Sala Magna, Ingeniería A",
       time: "9:00 AM - 9:00 PM",
@@ -15,7 +15,7 @@ function iniciarPaginaEventos() {
       featured: true,
     },
     {
-      id: 2, day: "02", month: "JUN", year: "2025",
+      id: 2, day: "02", month: "JUN", year: "2026",
       name: "Conferencia: IA y el Futuro del Trabajo",
       type: "Conferencia",
       location: "Auditorio Central",
@@ -27,7 +27,7 @@ function iniciarPaginaEventos() {
       featured: true,
     },
     {
-      id: 3, day: "05", month: "JUN", year: "2025",
+      id: 3, day: "05", month: "JUN", year: "2026",
       name: "Taller de Git y GitHub para Principiantes",
       type: "Taller",
       location: "Laboratorio Central, Planta Baja",
@@ -39,8 +39,8 @@ function iniciarPaginaEventos() {
       featured: false,
     },
     {
-      id: 4, day: "10", month: "JUN", year: "2025",
-      name: "Feria de Posgrados y Maestrías 2025",
+      id: 4, day: "10", month: "JUN", year: "2026",
+      name: "Feria de Posgrados y Maestrías 2026",
       type: "Feria",
       location: "Explanada Principal",
       time: "9:00 AM - 4:00 PM",
@@ -51,7 +51,7 @@ function iniciarPaginaEventos() {
       featured: false,
     },
     {
-      id: 5, day: "15", month: "JUN", year: "2025",
+      id: 5, day: "15", month: "JUN", year: "2026",
       name: "Seminario Internacional de Ciencias Sociales",
       type: "Seminario",
       location: "Sala de Conferencias B",
@@ -63,7 +63,7 @@ function iniciarPaginaEventos() {
       featured: false,
     },
     {
-      id: 6, day: "20", month: "JUN", year: "2025",
+      id: 6, day: "20", month: "JUN", year: "2026",
       name: "Taller de Diseño UX/UI con Figma",
       type: "Taller",
       location: "Laboratorio de Diseño Digital",
