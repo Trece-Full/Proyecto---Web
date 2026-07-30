@@ -103,9 +103,9 @@ app.post("/iniciosesion", (req, res) => {
 const hero =
 {
     category: "noticias",
-    title: "Inauguran nuevo laboratorio de innovación tecnológica",
-    excerpt: "El nuevo laboratorio brindará a los estudiantes herramientas de última tecnología.",
-    image: "https://images.unsplash.com/photo-1581093577421-f561a654a353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    title: "Fuertes lluvias inundan el Tec de Tepic",
+    excerpt: "En los ultímos días de estos meses se han reportado lluvias que impiden el acceso y salida del plantel.",
+    image: "https://humanidades.com/wp-content/uploads/2018/10/lluvia-3-e1581819535291.jpg",
     time: "Hace 3 horas"
 }
     ;
@@ -114,52 +114,68 @@ const hero =
 
 const noticias = [
     {
-        imagen: "https://picsum.photos/seed/hackathon-isc/1000/500",
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQncjyiCo0TBYMwzdfbmyr2gQZaP0YzXi0AZLk5Iw4FZg&s=10",
         categoria: "Noticias",
-        titulo: "Estudiantes ganan concurso nacional de programación",
-        resumen: "El equipo de ISC obtuvo el primer lugar en la competencia organizada por la ANIEI.",
-        contenido: "El equipo de ISC obtuvo el primer lugar en la competencia organizada por la ANIEI, superando a más de 40 equipos de universidades de todo el país. Durante 24 horas continuas, los estudiantes desarrollaron una solución de software enfocada en la optimización de rutas de transporte urbano. El equipo estuvo compuesto por 4 estudiantes de los últimos semestres, quienes destacaron el trabajo en equipo y el apoyo de sus asesores como clave para el resultado obtenido.",
+        titulo: "No hay rollo de papel en los baños del UVP",
+        resumen: "Durante los últimos meses se ha reportado la falta de papel higíenico en los baños del edificio UVP",
+        contenido: "Comunidad estudiantil y docente del edificio UVP ha manifestado su molestia ante la constante desabastecimiento de papel higiénico en los sanitarios del inmueble. A pesar de los múltiples reportes canalizados al departamento de servicios generales durante los últimos meses, el problema persiste daily, por lo que los alumnos exigen una solución inmediata o la revisión del presupuesto destinado a los insumos básicos de higiene.",
         tiempo: "Hace 5 horas"
     },
     {
-        imagen: "https://picsum.photos/seed/biblioteca-digital/1000/500",
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ96UrUWz2P5tFMy872Fi95MC5mWxWPOgWcdcdnmtukeA&s=10",
         categoria: "Noticias",
-        titulo: "Nueva biblioteca digital disponible",
-        resumen: "Accede a miles de libros y recursos académicos desde cualquier dispositivo.",
-        contenido: "Accede a miles de libros y recursos académicos desde cualquier dispositivo. La nueva plataforma digital incluye libros de texto, revistas científicas y bases de datos especializadas para todas las carreras. El acceso es gratuito para toda la comunidad estudiantil usando las credenciales institucionales, y estará disponible tanto desde la computadora como desde una aplicación móvil que se lanzará en las próximas semanas.",
+        titulo: "Estudiantes del ISC ganan en Hackaton",
+        resumen: "Nuestros estudiantes de Ingeniería en Sistemas Computacionales han ganadao en este Hackaton.",
+        contenido: "El equipo de ISC obtuvo el primer lugar en la competencia organizada por la ANIEI, superando a más de 40 equipos de universidades de todo el país. Durante 24 horas continuas, los estudiantes desarrollaron una solución de software enfocada en la optimización de rutas de transporte urbano. El equipo estuvo compuesto por 4 estudiantes de los últimos semestres, quienes destacaron el trabajo en equipo y el apoyo de sus asesores como clave para el resultado obtenido.",
         tiempo: "Hace 1 día"
     },
     {
-        imagen: "https://picsum.photos/seed/mentorias-2025/1000/500",
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqN74T9Xq_Pd_HsucL9yZgMN2x1nNvMzXcXXwbOfajCw&s=10",
         categoria: "Noticias",
-        titulo: "Programa de mentorías abre inscripciones",
-        resumen: "Conéctate con estudiantes y egresados que pueden orientar tu desarrollo académico.",
-        contenido: "Conéctate con estudiantes y egresados que pueden orientar tu desarrollo académico. El programa de mentorías busca acompañar a los estudiantes de primeros semestres con el apoyo de compañeros de semestres avanzados y egresados que ya se encuentran laborando en la industria. Las sesiones serán quincenales y podrán realizarse de forma presencial o en línea, según la disponibilidad de cada mentor.",
+        titulo: "Problemas en los cursos de Tutorías",
+        resumen: "Algunos estudiantes que participan en cursos de tutorías han reportado conductas indeseadas de sus tutores.",
+        contenido: "Se han registrado diversas quejas formales ante la dirección académica sobre comportamientos inapropiados e indeseados por parte de ciertos asignados al programa de tutorías. Estudiantes afectados señalan falta de respeto a los horarios, tratos inadecuados e incluso acoso en las sesiones. Las autoridades institucionales informaron que ya se abrieron las investigaciones correspondientes para deslindar responsabilidades y revisar el perfil de los tutores.",
         tiempo: "Hace 2 días"
     },
     {
-        imagen: "https://picsum.photos/seed/semana-ciencia/1000/500",
+        imagen: "https://play-lh.googleusercontent.com/YFJOg4YCdSvrVyn0leLp8Vt09Uvyt1GQPnW_nbZEJPJYCZ6cwbGkp6swAiMUxPAfJ1YZPWXfpRJSgg1H1Pi3MQ",
         categoria: "Noticias",
-        titulo: "Semana de la ciencia y tecnología 2025",
-        resumen: "Talleres, conferencias y exposiciones abiertas a toda la comunidad estudiantil.",
-        contenido: "Talleres, conferencias y exposiciones abiertas a toda la comunidad estudiantil. Durante una semana completa, distintos departamentos académicos presentarán proyectos de investigación, demostraciones tecnológicas y conferencias impartidas por especialistas invitados. La entrada es libre y se entregará constancia de participación a quienes asistan a un mínimo de 3 actividades.",
+        titulo: "Posible amenza de bomba",
+        resumen: "Se detectaron protoboards colocadas en distintas áreas del campus, se cree que es intento de bomba",
+        contenido: "Momentos de tensión se vivieron en el campus tras la localización de varias tarjetas protoboard con cables expuestos en puntos estratégicos de las instalaciones. Las autoridades activaron protocolos de evacuación preventiva ante la sospecha de artefactos explosivos. Personal especializado y de seguridad acudió al lugar para revisar los componentes y descartar cualquier peligro real para la comunidad estudiantil.",
         tiempo: "Hace 3 días"
     },
     {
-        imagen: "https://picsum.photos/seed/labs-computo/1000/500",
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-VWbu5wgjc_6neWTmuWs8nz165T-KZIlZDvZ6k9UPWQ&s=10",
         categoria: "Noticias",
-        titulo: "Renuevan equipos de los laboratorios de cómputo",
-        resumen: "Se instalaron nuevas computadoras y software actualizado en 4 laboratorios.",
-        contenido: "Se instalaron nuevas computadoras y software actualizado en 4 laboratorios. La actualización incluye equipos con mejor capacidad de procesamiento para el desarrollo de aplicaciones, modelado 3D y ejecución de máquinas virtuales. También se instalaron las licencias de software más recientes utilizadas en las distintas materias de la carrera.",
+        titulo: "No sirven los las computadoras del laboratorio de cómputo",
+        resumen: "Estudiantes de nuevo ingreso se dieron cuenta que el equipo proporcionado por el Tec no funciona",
+        contenido: "Durante las primeras prácticas de laboratorio, los alumnos de nuevo ingreso se encontraron con serias fallas operativas en las computadoras asignadas por la institución. Entre pantallas azules, falta de software indispensable y fallas de encendido, los estudiantes manifestaron su incomodidad ante la imposibilidad de avanzar en sus materias académicas. La coordinación administrativa prometió evaluar los equipos a la brevedad.",
         tiempo: "Hace 4 días"
     },
     {
-        imagen: "https://picsum.photos/seed/egresados-tech/1000/500",
+        imagen: "https://ih1.redbubble.net/image.5856623601.0647/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
         categoria: "Noticias",
-        titulo: "Egresados destacan en la industria del software",
-        resumen: "Exalumnos comparten su experiencia trabajando en empresas de tecnología reconocidas.",
-        contenido: "Exalumnos comparten su experiencia trabajando en empresas de tecnología reconocidas. En un conversatorio organizado por la coordinación de carrera, egresados de distintas generaciones platicaron sobre su trayectoria profesional, los retos que enfrentaron al egresar y consejos para los estudiantes que están por concluir sus estudios.",
+        titulo: "Egresados sin empleo",
+        resumen: "Exalumnos comparten su experiencia buscando chamba",
+        contenido: "Un grupo de exalumnos se reunió para dialogar sobre los desafíos reales de insertarse en el mercado laboral actual. A través de testimonios honestos, compartieron la dificultad para encontrar vacantes con salarios dignos y la constante exigencia de años de experiencia previa para puestos de entrada. El conversatorio busca visibilizar la brecha laboral y solicitar un mayor respaldo del departamento de vinculación profesional.",
         tiempo: "Hace 5 días"
+    },
+    {
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-EJhEnQqI_JM1cJVN48B8Zd7Jlws3X_yf-J7Aq2gfWQ&s=10",
+        categoria: "Noticias",
+        titulo: "¿A dónde va todo el dinero del Tec?",
+        resumen: "Nuestros reporteros investigan posible caso de desvio de fondos",
+        contenido: "Una investigación especial por parte del equipo periodístico ha puesto sobre la mesa discrepancias entre las cuotas cobradas a la comunidad y el mantenimiento real del campus. A pesar del incremento en los precios de inscripción, el deterioro de laboratorios y servicios básicos hace cuestionarse el destino final del presupuesto. Representantes de la administración no han emitido declaraciones oficiales hasta la fecha.",
+        tiempo: "Hace 6 días"
+    },
+    {
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4KXbimjd5Sd4_dUtmNw882bP_NcsK9RoLx5zEJ4ztzA8OB4mhLSUi-c8&s=10",
+        categoria: "Noticias",
+        titulo: "Todos contra todos",
+        resumen: "Estudiantes del plantel expulsados tras fuerte pelea, uno está muerto",
+        contenido: "Un altercado violento dentro de las instalaciones del plantel terminó en tragedia tras salirse completamente de control. El enfrentamiento físico entre varios jóvenes derivó en el fallecimiento de uno de los involucrados, además de la expulsión definitiva de las partes responsables por parte del consejo disciplinario. La fiscalía ha iniciado las investigaciones correspondientes para deslindar responsabilidades penales.",
+        tiempo: "Hace 7 días"
     }
 ];
 
