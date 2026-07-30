@@ -132,17 +132,17 @@ const noticias = [
     {
         imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqN74T9Xq_Pd_HsucL9yZgMN2x1nNvMzXcXXwbOfajCw&s=10",
         categoria: "Noticias",
-        titulo: "Problemas en los cursos de Tutorías",
-        resumen: "Algunos estudiantes que participan en cursos de tutorías han reportado conductas indeseadas de sus tutores.",
-        contenido: "Se han registrado diversas quejas formales ante la dirección académica sobre comportamientos inapropiados e indeseados por parte de ciertos asignados al programa de tutorías. Estudiantes afectados señalan falta de respeto a los horarios, tratos inadecuados e incluso acoso en las sesiones. Las autoridades institucionales informaron que ya se abrieron las investigaciones correspondientes para deslindar responsabilidades y revisar el perfil de los tutores.",
+        titulo: "Cursos de Tutorías",
+        resumen: "Se abren las inscripciones a tutorías para los alumnos que lo necesiten",
+        contenido: "La dirección académica ha anunciado la apertura del periodo de inscripciones para el programa institucional de tutorías. Este espacio tiene como objetivo brindar acompañamiento académico, regularización en asignaturas clave y orientación profesional a los estudiantes que busquen reforzar sus conocimientos. Se invita a toda la comunidad estudiantil a revisar los horarios disponibles a través de la plataforma institucional y realizar su registro a tiempo.",
         tiempo: "Hace 2 días"
     },
     {
         imagen: "https://play-lh.googleusercontent.com/YFJOg4YCdSvrVyn0leLp8Vt09Uvyt1GQPnW_nbZEJPJYCZ6cwbGkp6swAiMUxPAfJ1YZPWXfpRJSgg1H1Pi3MQ",
         categoria: "Noticias",
-        titulo: "Posible amenza de bomba",
-        resumen: "Se detectaron protoboards colocadas en distintas áreas del campus, se cree que es intento de bomba",
-        contenido: "Momentos de tensión se vivieron en el campus tras la localización de varias tarjetas protoboard con cables expuestos en puntos estratégicos de las instalaciones. Las autoridades activaron protocolos de evacuación preventiva ante la sospecha de artefactos explosivos. Personal especializado y de seguridad acudió al lugar para revisar los componentes y descartar cualquier peligro real para la comunidad estudiantil.",
+        titulo: "Estudiantes del ISC ganan torneo de videojuegos",
+        resumen: "Nuestros compañeros de ISC se llevan la victoria en torneo con causas benéficas",
+        contenido: "En una emocionante jornada llena de estrategia y trabajo en equipo, los estudiantes de Ingeniería en Sistemas Computacionales se coronaron campeones del torneo benéfico de eSports. El evento reunió a decenas de participantes con el objetivo de recaudar fondos y víveres para una causa social. Tras intensas partidas en las rondas finales, el equipo de ISC logró asegurar el primer lugar, demostrando no solo su habilidad en el juego, sino también el gran espíritu solidario de la comunidad universitaria.",
         tiempo: "Hace 3 días"
     },
     {
@@ -164,17 +164,17 @@ const noticias = [
     {
         imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-EJhEnQqI_JM1cJVN48B8Zd7Jlws3X_yf-J7Aq2gfWQ&s=10",
         categoria: "Noticias",
-        titulo: "¿A dónde va todo el dinero del Tec?",
-        resumen: "Nuestros reporteros investigan posible caso de desvio de fondos",
-        contenido: "Una investigación especial por parte del equipo periodístico ha puesto sobre la mesa discrepancias entre las cuotas cobradas a la comunidad y el mantenimiento real del campus. A pesar del incremento en los precios de inscripción, el deterioro de laboratorios y servicios básicos hace cuestionarse el destino final del presupuesto. Representantes de la administración no han emitido declaraciones oficiales hasta la fecha.",
+        titulo: "¿Qué te alcanza con $20 en la cafetería?",
+        resumen: "Nuestros reporteros investigan precios en la cafetería para aquellos que no tienen dinero",
+        contenido: "Una investigación especial por parte del equipo periodístico ha puesto sobre la mesa recomendaciones para almorzar durante la estadía en el campus, te alcanzan para sabritas y uno que otro postre, se recomienda por motivos de salud no consumir muchos de estos alimentos",
         tiempo: "Hace 6 días"
     },
     {
         imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4KXbimjd5Sd4_dUtmNw882bP_NcsK9RoLx5zEJ4ztzA8OB4mhLSUi-c8&s=10",
         categoria: "Noticias",
-        titulo: "Todos contra todos",
-        resumen: "Estudiantes del plantel expulsados tras fuerte pelea, uno está muerto",
-        contenido: "Un altercado violento dentro de las instalaciones del plantel terminó en tragedia tras salirse completamente de control. El enfrentamiento físico entre varios jóvenes derivó en el fallecimiento de uno de los involucrados, además de la expulsión definitiva de las partes responsables por parte del consejo disciplinario. La fiscalía ha iniciado las investigaciones correspondientes para deslindar responsabilidades penales.",
+        titulo: "Grave pelea en las instalaciones del Tec",
+        resumen: "Estudiantes del plantel expulsados tras fuerte pelea",
+        contenido: "Un altercado violento dentro de las instalaciones del plantel terminó en tragedia tras salirse completamente de control. El enfrentamiento físico entre varios jóvenes derivó en la expulsión definitiva de las partes responsables por parte del consejo disciplinario. La fiscalía ha iniciado las investigaciones correspondientes para deslindar responsabilidades penales.",
         tiempo: "Hace 7 días"
     }
 ];
