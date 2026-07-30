@@ -54,16 +54,17 @@ const ICON_CHEVRON = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="$
 const ICON_ARROW = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 const ICON_MAPPIN = (size) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
 
-// Callback invoked on section navigation (equivalent to onSectionChange prop).
-// Replace this with your own navigation logic.
+// Navega a otra sección usando el router SPA definido en script.js
 function onSectionChange(sectionId) {
-  console.log("Cambiar a sección:", sectionId);
+  navegar(sectionId);
 }
 
 function renderHero() {
   document.getElementById("hero-badge").outerHTML = categoryBadgeHTML("noticias");
   document.getElementById("hero-time").innerHTML = `${ICON_CLOCK(12)} Hace 3 horas`;
-  document.getElementById("hero-readmore").innerHTML = `Leer más ${ICON_ARROW(12)}`;
+  const heroReadmore = document.getElementById("hero-readmore");
+  heroReadmore.innerHTML = `Leer más ${ICON_ARROW(12)}`;
+  heroReadmore.addEventListener("click", () => onSectionChange("noticias"));
 }
 
 function renderNews() {
@@ -84,6 +85,8 @@ function renderNews() {
         </div>
       </div>
     `;
+    card.querySelector(".news-readmore").addEventListener("click", () => onSectionChange("noticias"));
+
     grid.appendChild(card);
   });
 }
@@ -130,8 +133,13 @@ function init() {
   renderImportant();
   renderEvents();
 
-  document.getElementById("ver-todas-noticias").innerHTML = `VER TODAS ${ICON_CHEVRON(12)}`;
+  const verTodasNoticias = document.getElementById("ver-todas-noticias");
+  verTodasNoticias.innerHTML = `VER TODAS ${ICON_CHEVRON(12)}`;
+  verTodasNoticias.addEventListener("click", () => onSectionChange("noticias"));
+
+  document.getElementById("ver-todos-avisos").addEventListener("click", () => onSectionChange("avisos"));
   document.getElementById("ver-todos-eventos").addEventListener("click", () => onSectionChange("eventos"));
+
   document.getElementById("trivia-text").textContent = TRIVIA;
 }
 
